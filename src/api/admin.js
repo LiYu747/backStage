@@ -16,7 +16,7 @@ export const apiPost = (data) => {
   return http.request(
     "post",
     "/back/galleryType/findAll",
-    { data },
+    { data }, 
     {
       isNeedFullRes: false, // 是否需要返回完整的响应对象
       isShowLoading: true, // 是否显示loading
