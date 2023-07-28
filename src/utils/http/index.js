@@ -1,8 +1,10 @@
 import Axios from "axios";
 import { apiServer, commentsToken } from "./domain.js";
 import NProgress from "../progress";
-import { setToken, getToken, formatToken } from "@/utils/auth"; 
- 
+import { setToken, getToken, formatToken } from "@/utils/auth";
+import { getLocalStorage } from "../index.js";
+import { ElMessage } from "element-plus";
+
 const defaultConfig = {
   // baseURL: VITE_PROXY_DOMAIN_REAL,
   // 当前使用mock模拟请求，将baseURL制空
@@ -65,7 +67,6 @@ class PureHttp {
   static httpInterceptorsRequest() {
     PureHttp.axiosInstance.interceptors.request.use(
       async (config) => {
-        // console.log('config',config)
         const {
           isNeedToken = true,
           isNeedFullRes = false,
@@ -98,19 +99,33 @@ class PureHttp {
         return PureHttp.isNeedToken
           ? new Promise((resolve) => {
               const token = tokenRoleName
-                ? getToken(tokenRoleName) 
+                ? getToken(tokenRoleName)
                 : getToken();
-                console.log('token', token);
+              // console.log('token', token);
               const { access_token, expires_in } = token || {};
+              if (config.isUpload) {
+                config.headers["x-auth-token"] = getLocalStorage("uploadToken");
+              }
               if (access_token) {
                 const now = new Date().getTime();
                 const expired = parseInt("" + expires_in) - now <= 0;
+                // console.log(expired,"expired");
                 if (expired) {
                   console.log("token过期");
                   resolve(config);
                 } else {
                   // console.log('token未过期', access_token)
-                  config.headers.Authorization = formatToken(access_token);
+                  if (!config.isUpload) {
+                    config.headers.Authorization = formatToken(access_token);
+                    if (
+                      config.url == "/teacher/roster/listVerification" ||
+                      config.url == "/teacher/roster/importList"
+                    ) {
+                      console.log(config.url, "00000000000000");
+                      config.headers.dslToken =
+                        "Bearer " + localStorage.getItem("dslToken");
+                    }
+                  }
                   resolve(config);
                 }
               } else {
@@ -128,6 +143,8 @@ class PureHttp {
 
   // 响应拦截器
   static httpInterceptorsResponse() {
+    let istype = false;
+
     PureHttp.axiosInstance.interceptors.response.use(
       (response) => {
         // 关闭进度条动画
@@ -136,14 +153,31 @@ class PureHttp {
         }
 
         const { code } = response.data;
+        if (code == 401) {
+          if (!istype) {
+            istype = true;
+            ElMessage({
+              message: "登录过期请重新登录",
+              type: "warning",
+            });
+            // setTimeout(() => {
+            window.location.assign(
+              window.location.origin + window.location.pathname + "#/auth"
+            );
+            // window.location.hash='/auth'
+            // }, 1000);
+            // return
+          }
+          return;
+        }
         // 业务异常code名单
         if (PureHttp.errorCodes.includes(code)) {
           PureHttp.isApiError = true;
           // 业务异常逻辑
           ElMessage({
-            message: '请求异常，请稍后再试',
-            type: 'error',
-          })
+            message: "请求异常，请稍后再试",
+            type: "error",
+          });
           console.log("请求异常，请稍后再试");
           return response;
           // return Promise.reject(response)

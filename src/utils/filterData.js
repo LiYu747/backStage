@@ -1,1700 +1,2471 @@
-export const USERINFO =  [
-    {
-      label: '个人信息',
-      children: [
-        {
-          name:"姓名",
-          id:"false"
-        },
-        {
-          name:"性别",
-          id:"false"
-        },
-        {
-          name:"曾用名",
-          id:"false"
-        },
-        {
-          name:"民族",
-          id:"false"
-        },
-        {
-          name:"姓名拼音",
-          id:"false"
-        },
-        {
-          name:"出生地",
-          id:"false"
-        },
-        {
-          name:"国家和地区",
-          id:"false"
-        },
-        {
-          name:"籍贯",
-          id:"false"
-        },
-        {
-          name:"政治面貌",
-          id:"false"
-        },
-        {
-          name:"入党时间",
-          id:"false"
-        },
-        {
-          name:"婚姻",
-          id:"false"
-        },
-        {
-          name:"健康状况",
-          id:"false"
-        },
-        {
-          name:"毕业院校",
-          id:"false"
-        },
-        {
-          name:"所学专业",
-          id:"false"
-        },
-        {
-          name:"最高学历",
-          id:"false"
-        },
-        {
-          name:"出生日期",
-          id:"false"
-        },
-        {
-          name:"年龄",
-          id:"false"
-        },
-        {
-          name:"个人邮箱",
-          id:"false"
-        },
-        {
-          name:"手机号",
-          id:"false"
-        },
-        {
-          name:"从教开始时间",
-          id:"false"
-        },
-        {
-          name:"教龄",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '编制信息',
-      children: [
-        {
-          name:"工作单位",
-          id:"false"
-        },
-        {
-          name:"隶属集团",
-          id:"false"
-        },
-        {
-          name:"编制单位(用工单位)",
-          id:"false"
-        },
-        {
-          name:"编制类型",
-          id:"false"
-        },
-        {
-          name:"编制状态",
-          id:"false"
-        },
-        {
-          name:"人员状态",
-          id:"false"
-        },
-        {
-          name:"入编时间",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '在编信息',
-      children: [
-        {
-          name:"教职工来源",
-          id:"false"
-        },
-        {
-          name:"进入本校日期",
-          id:"false"
-        },
-        {
-          name:"参加工作日期",
-          id:"false"
-        },
-        {
-          name:"用人形式",
-          id:"false"
-        },
-        {
-          name:"签订合同情况",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '非编信息',
-      children: [
-        {
-          name:"岗位分类",
-          id:"false"
-        },
-        {
-          name:"人员类别",
-          id:"false"
-        },
-        {
-          name:"用工方式",
-          id:"false"
-        },
-        {
-          name:"签订合同情况",
-          id:"false"
-        },
-        {
-          name:"劳务派遣机构",
-          id:"false"
-        },
-        {
-          name:"进入本单位年月",
-          id:"false"
-        },
-        {
-          name:"合同期起",
-          id:"false"
-        },
-        {
-          name:"合同期止",
-          id:"false"
-        },
-        {
-          name:"经费来源",
-          id:"false"
-        },
-        {
-          name:"是否人事代理",
-          id:"false"
-        },
-        {
-          name:"是否退休返聘",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '其他信息',
-      children: [
-        {
-          name:"信息技术应用能力",
-          id:"false"
-        },
-        {
-          name:"是否受过特教专业培养培训",
-          id:"false"
-        },
-        {
-          name:"是否特级教师",
-          id:"false"
-        },
-        {
-          name:"是否全日制师范类专业毕业",
-          id:"false"
-        },
-        {
-          name:"是否受过学前教育专业培养培训",
-          id:"false"
-        },
-        {
-          name:"是否全日制学前教育专业毕业",
-          id:"false"
-        },
-        {
-          name:"是否双师型教师",
-          id:"false"
-        },
-        {
-          name:"是否参加基层服务项目",
-          id:"false"
-        },
-        {
-          name:"是否属于免费（公费）师范生",
-          id:"false"
-        },
-        {
-          name:"是否县级以上骨干教师",
-          id:"false"
-        },
-        {
-          name:"是否心理健康教育教师",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '教育教学',
-      children: [
-        {
-          name:"学期",
-          id:"false"
-        },
-        {
-          name:"任教状况",
-          id:"false"
-        },
-        {
-          name:"任教学段",
-          id:"false"
-        },
-        {
-          name:"任教课程",
-          id:"false"
-        },
-        {
-          name:"兼任工作",
-          id:"false"
-        },
-        {
-          name:"任教班级类型",
-          id:"false"
-        },
-        {
-          name:"任教年级",
-          id:"false"
-        },
-        {
-          name:"任教班级",
-          id:"false"
-        },
-        {
-          name:"课时",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '承担公开课等情况',
-      children: [
-        {
-          name:"授课日期",
-          id:"false"
-        },
-        {
-          name:"讲授课程名称",
-          id:"false"
-        },
-        {
-          name:"授课对象",
-          id:"false"
-        },
-        {
-          name:"学生数",
-          id:"false"
-        },
-        {
-          name:"组织单位",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '承担市外支教任务情况',
-      children: [
-        {
-          name:"支教学校/单位",
-          id:"false"
-        },
-        {
-          name:"支教开始时间",
-          id:"false"
-        },
-        {
-          name:"支教结束时间",
-          id:"false"
-        },
-        {
-          name:"支教组织单位",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '学习经历',
-      children: [
-        {
-          name:"入学年月",
-          id:"false"
-        },
-        {
-          name:"毕业年月",
-          id:"false"
-        },
-        {
-          name:"学习方式",
-          id:"false"
-        },
-        {
-          name:"在学单位类别",
-          id:"false"
-        },
-        {
-          name:"学历",
-          id:"false"
-        },
-        {
-          name:"获得学历的国家(地区)",
-          id:"false"
-        },
-        {
-          name:"获得学历的院校或机构",
-          id:"false"
-        },
-        {
-          name:"专业名称",
-          id:"false"
-        },
-        {
-          name:"其他专业",
-          id:"false"
-        },
-        {
-          name:"学位层次",
-          id:"false"
-        },
-        {
-          name:"学位名称",
-          id:"false"
-        },
-        {
-          name:"获得学位的国家(地区)",
-          id:"false"
-        },
-        {
-          name:"获得学位的院校或机构",
-          id:"false"
-        },
-        {
-          name:"学位授予年月",
-          id:"false"
-        },
-        {
-          name:"是否师范类专业",
-          id:"false"
-        },
-        {
-          name:"最高学历标识",
-          id:"false"
-        },
-        {
-          name:"第一学历标识",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '国内培训',
-      children: [
-        {
-          name:"培训项目名称",
-          id:"false"
-        },
-        {
-          name:"培训年度",
-          id:"false"
-        },
-        {
-          name:"培训类别",
-          id:"false"
-        },
-        {
-          name:"培训机构名称",
-          id:"false"
-        },
-        {
-          name:"培训方式",
-          id:"false"
-        },
-        {
-          name:"培训获得学时",
-          id:"false"
-        },
-        {
-          name:"培训获得学分",
-          id:"false"
-        },
-        {
-          name:"培训开始日期",
-          id:"false"
-        },
-        {
-          name:"培训结束日期",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '海外研修',
-      children: [
-        {
-          name:"培训年度",
-          id:"false"
-        },
-        {
-          name:"开始日期",
-          id:"false"
-        },
-        {
-          name:"结束日期",
-          id:"false"
-        },
-        {
-          name:"国家(地区)",
-          id:"false"
-        },
-        {
-          name:"研修(访学)机构名称",
-          id:"false"
-        },
-        {
-          name:"项目名称",
-          id:"false"
-        },
-        {
-          name:"项目组织单位名称",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '工作经历',
-      children: [
-        {
-          name:"任职单位名称",
-          id:"false"
-        },
-        {
-          name:"任职开始年月",
-          id:"false"
-        },
-        {
-          name:"任职结束年月",
-          id:"false"
-        },
-        {
-          name:"单位性质类别",
-          id:"false"
-        },
-        {
-          name:"任职岗位",
-          id:"false"
-        },
-        {
-          name:"证明人",
-          id:"false"
-        },
-        {
-          name:"奖惩情况",
-          id:"false"
-        },
-        {
-          name:"是否最新",
-          id:"false"
-        },
-        {
-          name:"班主任年限",
-          id:"false"
-        },
-        {
-          name:"是否农村",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '交流轮岗',
-      children: [
-        {
-          name:"交流轮岗类型",
-          id:"false"
-        },
-        {
-          name:"开始年月",
-          id:"false"
-        },
-        {
-          name:"结束年月",
-          id:"false"
-        },
-        {
-          name:"原单位名称",
-          id:"false"
-        },
-        {
-          name:"交流轮岗单位名称",
-          id:"false"
-        },
-        {
-          name:"是否调动人事关系",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '岗位聘任',
-      children: [
-        {
-          name:"岗位类别",
-          id:"false"
-        },
-        {
-          name:"岗位等级",
-          id:"false"
-        },
-        {
-          name:"聘任开始日期",
-          id:"false"
-        },
-        {
-          name:"兼任岗位类别",
-          id:"false"
-        },
-        {
-          name:"兼任岗位等级",
-          id:"false"
-        },
-        {
-          name:"行政职务",
-          id:"false"
-        },
-        {
-          name:"行政职级",
-          id:"false"
-        },
-        {
-          name:"所属部门(科室)",
-          id:"false"
-        },
-        {
-          name:"任职开始年月",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '专业技术职务聘任',
-      children: [
-        {
-          name:"聘任专业技术职务",
-          id:"false"
-        },
-        {
-          name:"聘任开始日期",
-          id:"false"
-        },
-        {
-          name:"聘任结束日期",
-          id:"false"
-        },
-        {
-          name:"聘任单位名称",
-          id:"false"
-        },
-        {
-          name:"熟悉专业有何专长",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '担任培训专家情况',
-      children: [
-        {
-          name:"活动名称",
-          id:"false"
-        },
-        {
-          name:"培训主题",
-          id:"false"
-        },
-        {
-          name:"培训级别",
-          id:"false"
-        },
-        {
-          name:"培训时间",
-          id:"false"
-        },
-        {
-          name:"组织单位",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '担任评审专家情况',
-      children: [
-        {
-          name:"活动名称",
-          id:"false"
-        },
-        {
-          name:"评审活动级别",
-          id:"false"
-        },
-        {
-          name:"评审时间",
-          id:"false"
-        },
-        {
-          name:"组织单位",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '名师工作室负责人情况',
-      children: [
-        {
-          name:"名师工作室名称",
-          id:"false"
-        },
-        {
-          name:"工作室人数",
-          id:"false"
-        },
-        {
-          name:"组建开始时间",
-          id:"false"
-        },
-        {
-          name:"结束时间",
-          id:"false"
-        },
-        {
-          name:"工作室级别",
-          id:"false"
-        },
-        {
-          name:"典型成果",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '承担特色课程领衔教师',
-      children: [
-        {
-          name:"学校特色课程名称",
-          id:"false"
-        },
-        {
-          name:"担任时间",
-          id:"false"
-        },
-        {
-          name:"是否领衔教师",
-          id:"false"
-        },
-        {
-          name:"课时",
-          id:"false"
-        },
-       
-      ],
-    },
-    {
-      label: '年度考核结果',
-      children: [
-        {
-          name:"考核年度",
-          id:"false"
-        },
-        {
-          name:"考核单位名称",
-          id:"false"
-        },
-        {
-          name:"考核结果",
-          id:"false"
-        },
-        {
-          name:"考核确认日期",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '教师资格',
-      children: [
-        {
-          name:"资格证种类",
-          id:"false"
-        },
-        {
-          name:"认证学段",
-          id:"false"
-        },
-        {
-          name:"认证学科",
-          id:"false"
-        },
-        {
-          name:"颁发机构",
-          id:"false"
-        },
-        {
-          name:"首次注册日期",
-          id:"false"
-        },
-        {
-          name:"定期注册日期",
-          id:"false"
-        },
-        {
-          name:"教师资格证号码",
-          id:"false"
-        },
-        {
-          name:"证书颁发日期",
-          id:"false"
-        },
-        {
-          name:"首次注册结论",
-          id:"false"
-        },
-        {
-          name:"定期注册结论",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '教师资格证认定信息',
-      children: [
-        {
-          name:"证照状态",
-          id:"false"
-        },
-        {
-          name:"证书签发日期",
-          id:"false"
-        },
-        {
-          name:"资格种类",
-          id:"false"
-        },
-        {
-          name:"认证机构名称",
-          id:"false"
-        },
-        {
-          name:"认定批次",
-          id:"false"
-        },
-        {
-          name:"证书编号",
-          id:"false"
-        },
-        {
-          name:"教师资格证编号",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '培训学时记录',
-      children: [
-        {
-          name:"培训开始时间",
-          id:"false"
-        },
-        {
-          name:"培训结束时间",
-          id:"false"
-        },
-        {
-          name:"教师培训学时",
-          id:"false"
-        },
-        {
-          name:"组织培训单位",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '证书信息',
-      children: [
-        {
-          name:"证书类型",
-          id:"false"
-        },
-        {
-          name:"证书编号",
-          id:"false"
-        },
-        {
-          name:"语言证书名称",
-          id:"false"
-        },
-        {
-          name:"证书名称",
-          id:"false"
-        },
-        {
-          name:"发证年月",
-          id:"false"
-        },
-        {
-          name:"发证单位",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '社会体育指导员证书',
-      children: [
-        {
-          name:"证书等级",
-          id:"false"
-        },
-        {
-          name:"发证时间",
-          id:"false"
-        },
-        {
-          name:"指导项目",
-          id:"false"
-        },
-        {
-          name:"指导站点",
-          id:"false"
-        },
-        {
-          name:"证书编号",
-          id:"false"
-        },
-        {
-          name:"发证单位",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '社会体育指导员技术等级培训信息',
-      children: [
-        {
-          name:"发证单位",
-          id:"false"
-        },
-        {
-          name:"发证时间",
-          id:"false"
-        },
-        {
-          name:"成绩",
-          id:"false"
-        },
-        {
-          name:"民族",
-          id:"false"
-        },
-        {
-          name:"指导项目",
-          id:"false"
-        },
-        {
-          name:"证书编号",
-          id:"false"
-        },
-        {
-          name:"指导站点",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '等级裁判员信息',
-      children: [
-        {
-          name:"项目",
-          id:"false"
-        },
-        {
-          name:"裁判等级",
-          id:"false"
-        },
-        {
-          name:"批准日期",
-          id:"false"
-        },
-        {
-          name:"联系手机",
-          id:"false"
-        },
-        {
-          name:"备注",
-          id:"false"
-        },
-        {
-          name:"接收时间",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '国家医药证书',
-      children: [
-        {
-          name:"国家医药证书名称",
-          id:"false"
-        },
-        {
-          name:"证书(批件)号",
-          id:"false"
-        },
-        {
-          name:"本人角色",
-          id:"false"
-        },
-        {
-          name:"颁布或批准时间",
-          id:"false"
-        },
-        {
-          name:"有效期",
-          id:"false"
-        },
-        {
-          name:"是否是代表性成果和项目",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '国家标准或行业标准',
-      children: [
-        {
-          name:"标准号",
-          id:"false"
-        },
-        {
-          name:"本人角色",
-          id:"false"
-        },
-        {
-          name:"发布日期",
-          id:"false"
-        },
-        {
-          name:"发布单位",
-          id:"false"
-        },
-        {
-          name:"是否是代表性成果和项目",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '语言能力',
-      children: [
-        {
-          name:"语种",
-          id:"false"
-        },
-        {
-          name:"掌握程度",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '项目（课题）',
-      children: [
-        {
-          name:"项目类型",
-          id:"false"
-        },
-        {
-          name:"项目名称",
-          id:"false"
-        },
-        {
-          name:"项目批准号",
-          id:"false"
-        },
-        {
-          name:"学科领域",
-          id:"false"
-        },
-        {
-          name:"项目经费额度",
-          id:"false"
-        },
-        {
-          name:"开始年月",
-          id:"false"
-        },
-        {
-          name:"结束年月",
-          id:"false"
-        },
-        {
-          name:"项目中本人角色",
-          id:"false"
-        },
-        {
-          name:"本人排名",
-          id:"false"
-        },
-        {
-          name:"项目委托单位",
-          id:"false"
-        },
-        {
-          name:"项目来源",
-          id:"false"
-        },
-        {
-          name:"是否是代表性成果和项目",
-          id:"false"
-        },
-        {
-          name:"本人工作描述",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '骨干教师情况',
-      children: [
-        {
-          name:"骨干教师类型",
-          id:"false"
-        },
-        {
-          name:"骨干教师级别",
-          id:"false"
-        },
-        {
-          name:"骨干称号名称",
-          id:"false"
-        },
-        {
-          name:"获得骨干教师称号时间",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '指导学生参加获奖',
-      children: [
-        {
-          name:"获奖名称",
-          id:"false"
-        },
-        {
-          name:"本人角色",
-          id:"false"
-        },
-        {
-          name:"获奖等级",
-          id:"false"
-        },
-        {
-          name:"获奖级别",
-          id:"false"
-        },
-        {
-          name:"获奖年月",
-          id:"false"
-        },
-        {
-          name:"本人承担工作描述",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '奖励',
-      children: [
-        {
-          name:"奖励类别",
-          id:"false"
-        },
-        {
-          name:"获奖年月",
-          id:"false"
-        },
-        {
-          name:"奖励名称",
-          id:"false"
-        },
-        {
-          name:"奖励级别",
-          id:"false"
-        },
-        {
-          name:"奖励等级",
-          id:"false"
-        },
-        {
-          name:"奖励其他等级",
-          id:"false"
-        },
-        {
-          name:"本人排名",
-          id:"false"
-        },
-        {
-          name:"授权国家（地区）",
-          id:"false"
-        },
-        {
-          name:"授奖单位",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '奖励',
-      children: [
-        {
-          name:"奖励类别",
-          id:"false"
-        },
-        {
-          name:"获奖年月",
-          id:"false"
-        },
-        {
-          name:"奖励名称",
-          id:"false"
-        },
-        {
-          name:"奖励级别",
-          id:"false"
-        },
-        {
-          name:"奖励等级",
-          id:"false"
-        },
-        {
-          name:"奖励其他等级",
-          id:"false"
-        },
-        {
-          name:"本人排名",
-          id:"false"
-        },
-        {
-          name:"授权国家（地区）",
-          id:"false"
-        },
-        {
-          name:"授奖单位",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '荣誉称号',
-      children: [
-        {
-          name:"荣誉称号",
-          id:"false"
-        },
-        {
-          name:"获得称号时间",
-          id:"false"
-        },
-        {
-          name:"荣誉称号级别",
-          id:"false"
-        },
-        {
-          name:"签章单位",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '班主任荣誉',
-      children: [
-        {
-          name:"荣誉名称",
-          id:"false"
-        },
-        {
-          name:"获奖时间",
-          id:"false"
-        },
-        {
-          name:"签章单位",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '先进班集体荣誉',
-      children: [
-        {
-          name:"班集体情况",
-          id:"false"
-        },
-        {
-          name:"获奖时间",
-          id:"false"
-        },
-        {
-          name:"获奖级别",
-          id:"false"
-        },
-        {
-          name:"签章单位",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '入选人才项目',
-      children: [
-        {
-          name:"入选人才项目名称",
-          id:"false"
-        },
-        {
-          name:"入选年份",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '著作',
-      children: [
-        {
-          name:"著作类别",
-          id:"false"
-        },
-        {
-          name:"著作名称",
-          id:"false"
-        },
-        {
-          name:"学科领域",
-          id:"false"
-        },
-        {
-          name:"出版日期",
-          id:"false"
-        },
-        {
-          name:"出版社名称",
-          id:"false"
-        },
-        {
-          name:"出版号",
-          id:"false"
-        },
-        {
-          name:"著作中本人角色",
-          id:"false"
-        },
-        {
-          name:"总字数（字）",
-          id:"false"
-        },
-        {
-          name:"本人撰写字数（字）",
-          id:"false"
-        },
-        {
-          name:"是否是代表性成果和项目",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '论文案例',
-      children: [
-        {
-          name:"论文案例名称",
-          id:"false"
-        },
-        {
-          name:"论文案例级别",
-          id:"false"
-        },
-        {
-          name:"发表刊物名称",
-          id:"false"
-        },
-        {
-          name:"发表刊物级别",
-          id:"false"
-        },
-        {
-          name:"是否核心期刊",
-          id:"false"
-        },
-        {
-          name:"核心期刊类别",
-          id:"false"
-        },
-        {
-          name:"发表年月",
-          id:"false"
-        },
-        {
-          name:"卷号",
-          id:"false"
-        },
-        {
-          name:"期号",
-          id:"false"
-        },
-        {
-          name:"起始页码",
-          id:"false"
-        },
-        {
-          name:"结束页码",
-          id:"false"
-        },
-        {
-          name:"本人角色",
-          id:"false"
-        },
-        {
-          name:"学科领域",
-          id:"false"
-        },
-        {
-          name:"论文案例收录情况",
-          id:"false"
-        },
-        {
-          name:"是否发表",
-          id:"false"
-        },
-        {
-          name:"是否获奖",
-          id:"false"
-        },
-        {
-          name:"获奖年月",
-          id:"false"
-        },
-        {
-          name:"授奖单位",
-          id:"false"
-        },
-        {
-          name:"奖励名称",
-          id:"false"
-        },
-        {
-          name:"是否是代表性成果和项目",
-          id:"false"
-        },
-        {
-          name:"奖励等级",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '文艺作品',
-      children: [
-        {
-          name:"文艺作品类别",
-          id:"false"
-        },
-        {
-          name:"文艺作品名称",
-          id:"false"
-        },
-        {
-          name:"本人角色",
-          id:"false"
-        },
-        {
-          name:"完成时间",
-          id:"false"
-        },
-        {
-          name:"完成地点",
-          id:"false"
-        },
-        {
-          name:"本人工作描述",
-          id:"false"
-        },
-        {
-          name:"是否是代表性成果和项目",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '专利或软件著作权',
-      children: [
-        {
-          name:"专利或软件著作权类型",
-          id:"false"
-        },
-        {
-          name:"专利或软件著作权名称",
-          id:"false"
-        },
-        {
-          name:"学科领域",
-          id:"false"
-        },
-        {
-          name:"批准日期",
-          id:"false"
-        },
-        {
-          name:"本人角色",
-          id:"false"
-        },
-        {
-          name:"本人工作描述",
-          id:"false"
-        },
-        {
-          name:"是否是代表性成果和项目",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '咨询报告或研究报告',
-      children: [
-        {
-          name:"报告题目",
-          id:"false"
-        },
-        {
-          name:"本人角色",
-          id:"false"
-        },
-        {
-          name:"报告时间",
-          id:"false"
-        },
-        {
-          name:"委托方",
-          id:"false"
-        },
-        {
-          name:"是否是代表性成果和项目",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '家庭成员及重要社会关系',
-      children: [
-        {
-          name:"称谓",
-          id:"false"
-        },
-        {
-          name:"姓名",
-          id:"false"
-        },
-        {
-          name:"年龄",
-          id:"false"
-        },
-        {
-          name:"政治面貌",
-          id:"false"
-        },
-        {
-          name:"工作单位及职务",
-          id:"false"
-        },
-        {
-          name:"是否诸暨市教师",
-          id:"false"
-        },
-        {
-          name:"是否在农村学校任教",
-          id:"false"
-        },
-        {
-          name:"教龄",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '师德考核',
-      children: [
-        {
-          name:"师德考核时间",
-          id:"false"
-        },
-        {
-          name:"师德考核结论",
-          id:"false"
-        },
-        {
-          name:"师德考核单位名称",
-          id:"false"
-        },
-        {
-          name:"荣誉记录描述",
-          id:"false"
-        },
-        {
-          name:"荣誉发生日期",
-          id:"false"
-        },
-        {
-          name:"荣誉级别",
-          id:"false"
-        },
-        {
-          name:"荣誉授予单位名称",
-          id:"false"
-        },
-        {
-          name:"获得荣誉称号",
-          id:"false"
-        },
-      ],
-    },
-    {
-      label: '处分信息',
-      children: [
-        {
-          name:"处分类型",
-          id:"false"
-        },
-        {
-          name:"违规内容",
-          id:"false"
-        },
-        {
-          name:"通报时间",
-          id:"false"
-        },
-        {
-          name:"通报单位",
-          id:"false"
-        },
-      ],
-    },
-  ]
-  export const LIST = [
-    {
-      label: '个人信息',
-      children: [
-        {
-          name:"姓名",
-          id:"false"
-        },
-        {
-          name:"性别",
-          id:"false"
-        },
-        {
-          name:"曾用名",
-          id:"false"
-        },
-        {
-          name:"民族",
-          id:"false"
-        },
-        {
-          name:"姓名拼音",
-          id:"false"
-        },
-        {
-          name:"出生地",
-          id:"false"
-        },
-        {
-          name:"国家和地区",
-          id:"false"
-        },
-        {
-          name:"籍贯",
-          id:"false"
-        },
-        {
-          name:"政治面貌",
-          id:"false"
-        },
-        {
-          name:"入党时间",
-          id:"false"
-        },
-        {
-          name:"婚姻",
-          id:"false"
-        },
-        {
-          name:"健康状况",
-          id:"false"
-        },
-        {
-          name:"毕业院校",
-          id:"false"
-        },
-        {
-          name:"所学专业",
-          id:"false"
-        },
-        {
-          name:"最高学历",
-          id:"false"
-        },
-        {
-          name:"出生日期",
-          id:"false"
-        },
-        {
-          name:"年龄",
-          id:"false"
-        },
-        {
-          name:"个人邮箱",
-          id:"false"
-        },
-        {
-          name:"手机号",
-          id:"false"
-        },
-        {
-          name:"从教开始时间",
-          id:"false"
-        },
-        {
-          name:"教龄",
-          id:"false"
-        },
-      ],
-    },
-  ]
+export const USERINFO = [
+  {
+    label: "个人信息",
+    title: "staff",
+    children: [
+      {
+        name: "姓名",
+        id: true,
+        type:"input",
+        title: "name",
+        
+      },
+      {
+        name: "性别",
+        id: true,
+        type:"select",
+        title: "sex",
+      },
+      {
+        name: "曾用名",
+        id: "false",
+        type:"input",
+        title: "beforeName",
+      },
+      {
+        name: "民族",
+        id: "false",
+        type:"select",
+        title: "nation",
+      },
+      {
+        name: "姓名拼音",
+        id: "false",
+        type:"input",
+        title: "spellName",
+      },
+      {
+        name: "出生地",
+        id: "false",
+        type:"cascader",
+        title:"birthPlace"
+      },
+      {
+        name: "国家和地区",
+        id: "false",
+        type:"select",
+        title: "area",
+      },
+      {
+        name: "籍贯",
+        id: "false",
+        type:"cascader",
+        title:"nativePlace"
+      },
+      {
+        name: "政治面貌",
+        id: "false",
+        type:"select",
+        title: "politicsStatus",
+      },
+      {
+        name: "入党时间",
+        id: "false",
+        type:"date-picker",
+        title: "joinTime",
+      },
+      {
+        name: "婚姻",
+        id: "false",
+        type:"select",
+        title: "marriage",
+      },
+      {
+        name: "健康状况",
+        id: "false",
+        type:"select",
+        title: "physicalCondition",
+      },
+      {
+        name: "毕业院校",
+        id: "false",
+        type:"input",
+        title: "graduateSchool",
+      },
+      {
+        name: "所学专业",
+        id: "false",
+        type:"input",
+        title: "specialty",
+      },
+      {
+        name: "学历",
+        id: "false",
+        type:"select",
+        title: "tallEducation",
+      },
+      {
+        name: "出生日期",
+        id: "false",
+        type:"date-picker",
+        title: "birthTime",
+      },
+      {
+        name: "年龄",
+        id: "false",
+        type:"input",
+        title: "age",
+      },
+      {
+        name: "个人邮箱",
+        id: "false",
+        type:"input",
+        title: "email",
+      },
+      {
+        name: "手机号",
+        id: true,
+        type:"input",
+        title: "phone",
+      },
+      {
+        name: "证件号码",
+        id: true,
+        type:"input",
+        title: "idNumber",
+      },
+      {
+        name: "从教开始时间",
+        id: "false",
+        type:"date-picker",
+        title: "teachTime",
+      },
+      {
+        name: "教龄",
+        id: "false",
+        type:"input",
+        title: "teachAge",
+      },
+    ],
+  },
+  {
+    label: "编制信息",
+    title: "authorizedStrength",
+    children: [
+      {
+        name: "工作单位",
+        id: "false",
+        type:"input",
+        title: "workName",
+      },
+      {
+        name: "隶属集团",
+        id: "false",
+        type:"cascader",
+        title: "affiliationWork",
+      },
+      {
+        name: "编制单位(用工单位)",
+        id: "false",
+        type:"cascader",
+        title: "organizationUnit",
+      },
+      {
+        name: "编制类型",
+        id: "false",
+        type:"select",
+        title: "authorizedStrengthType",
+      },
+      {
+        name: "编制状态",
+        id: "false",
+        type:"select",
+        title: "authorizedStrengthState",
+      },
+      {
+        name: "人员状态",
+        id: "false",
+        type:"select",
+        title: "personState",
+      },
+      {
+        name: "入编时间",
+        id: "false",
+        type:"date-picker",
+        title: "joinTime",
+      },
+      
+    ],
+  },
+  {
+    label: "在编信息",
+    title: "inAuthorizedStrength",
+    children: [
+      {
+        name: "教职工来源",
+        id: "false",
+        type:"select",
+        title: "teacherSource",
+      },
+      {
+        name: "进入本校日期",
+        id: "false",
+        type:"date-picker",
+        title: "teacherSourceSupplement",
+      },
+      {
+        name: "参加工作日期",
+        id: "false",
+        type:"date-picker",
+        title: "joinWorkTime",
+      },
+      {
+        name: "用人形式",
+        id: "false",
+        type:"select",
+        title: "choosePerson",
+      },
+      {
+        name: "签订合同情况",
+        id: "false",
+        type:"select",
+        title: "workName",
+      },
+    ],
+  },
+  {
+    label: "非编信息",
+    title: "notAuthorizedStrength",
+    children: [
+      {
+        name: "岗位分类",
+        id: "false",
+        type:"select",
+        title: "jobClassify",
+      },
+      {
+        name: "人员类别",
+        id: "false",
+        type:"select",
+        title: "personnelCategory",
+      },
+      {
+        name: "用工方式",
+        id: "false",
+        type:"select",
+        title: "employmentMode",
+      },
+      {
+        name: "签订合同情况",
+        id: "false",
+        type:"select",
+        title: "contractType",
+      },
+      {
+        name: "劳务派遣机构",
+        id: "false",
+        type:"input",
+        title: "serviceAgency",
+      },
+      {
+        name: "进入本单位年月",
+        id: "false",
+        type:"date-picker",
+        title: "joinTime",
+      },
+      {
+        name: "合同期起",
+        id: "false",
+        type:"date-picker",
+        title: "contractStartTime",
+      },
+      {
+        name: "合同期止",
+        id: "false",
+        type:"date-picker",
+        title: "contractEndTime",
+      },
+      {
+        name: "经费来源",
+        id: "false",
+        type:"select",
+        title: "moneySource",
+      },
+      {
+        name: "是否人事代理",
+        id: "false",
+        type:"select",
+        title: "agency",
+      },
+      {
+        name: "是否退休返聘",
+        id: "false",
+        type:"select",
+        title: "retire",
+      },
+    ],
+  },
+  {
+    label: "其他信息",
+    title: "elseMessage",
+    children: [
+      {
+        name: "信息技术应用能力",
+        id: "false",
+        type:"select",
+        title: "capacity",
+      },
+      {
+        name: "是否受过特教专业培养培训",
+        id: "false",
+        type:"select",
+        title: "isTrain",
+      },
+      {
+        name: "是否特级教师",
+        id: "false",
+        type:"select",
+        title: "isSuperfineTeacher",
+      },
+      {
+        name: "是否全日制师范类专业毕业",
+        id: "false",
+        type:"select",
+        title: "jobClassify",
+      },
+      {
+        name: "是否受过学前教育专业培养培训",
+        id: "false",
+        type:"select",
+        title: "isTeacherTraining",
+      },
+      {
+        name: "是否全日制学前教育专业毕业",
+        id: "false",
+        type:"select",
+        title: "isPreschoolEducation",
+      },
+      {
+        name: "是否双师型教师",
+        id: "false",
+        type:"select",
+        title: "isDoubleTeacher",
+      },
+      {
+        name: "是否参加基层服务项目",
+        id: "false",
+        type:"select",
+        title: "isJoinBasicLevel",
+      },
+      {
+        name: "是否属于免费（公费）师范生",
+        id: "false",
+        type:"select",
+        title: "isPublicExpense",
+      },
+      {
+        name: "是否县级以上骨干教师",
+        id: "false",
+        type:"select",
+        title: "isCoreTeacher",
+      },
+      {
+        name: "是否心理健康教育教师",
+        id: "false",
+        type:"select",
+        title: "isMentalHealthTeacher",
+      },
+    ],
+  },
+  {
+    label: "教育教学",
+    title: "educationTeaching",
+    children: [
+      {
+        name: "学期",
+        id: "false",
+        type:"select",
+        title: "semester",
+      },
+      {
+        name: "任教状况",
+        id: "false",
+        type:"select",
+        title: "teachingSituation",
+      },
+      // {
+      //   name: "任教学段",
+      //   id: "false",
+      //   type:"select",
+      //   title: "teachingSection",
+      // },
+      // {
+      //   name: "任教课程",
+      //   id: "false",
+      //   type:"select",
+      //   title: "teachingCourse",
+      // },
+      {
+        name: "兼任工作",
+        id: "false",
+        type:"select",
+        title: "partJob",
+      },
+      // {
+      //   name: "任教班级类型",
+      //   id: "false",
+      //   type:"select",
+      //   title: "teachingClassType",
+      // },
+      {
+        name: "任教年级",
+        id: "false",
+        type:"select",
+        title: "name",
+      },
+      {
+        name: "任教班级",
+        id: "false",
+        type:"select",
+        title: "name",
+      },
+      {
+        name: "课时",
+        id: "false",
+        type:"input",
+        title: "hour",
+      },
+    ],
+  },
+  {
+    label: "承担公开课等情况",
+    title: "openClass",
+    children: [
+      {
+        name: "授课日期",
+        id: "false",
+        type:"date-picker",
+        title: "lectureDate",
+      },
+      {
+        name: "讲授课程名称",
+        id: "false",
+        type:"input",
+        title: "teachingCourseTitle",
+      },
+      {
+        name: "授课对象",
+        id: "false",
+        type:"input",
+        title: "teachingObject",
+      },
+      {
+        name: "学生数",
+        id: "false",
+        type:"input",
+        title: "studentNumber",
+      },
+      {
+        name: "组织单位",
+        id: "false",
+        type:"input",
+        title: "organizationUnit",
+      },
+    ],
+  },
+  {
+    label: "承担市外支教任务情况",
+    title: "supportEducation",
+    children: [
+      {
+        name: "支教学校/单位",
+        id: "false",
+        type:"input",
+        title: "stsupportEducationUnitaff",
+      },
+      {
+        name: "支教开始时间",
+        id: "false",
+        type:"date-picker",
+        title: "supportEducationStart",
+      },
+      {
+        name: "支教结束时间",
+        id: "false",
+        type:"date-picker",
+        title: "supportEducationEnd",
+      },
+      {
+        name: "支教组织单位",
+        id: "false",
+        type:"input",
+        title: "supportEducationOrganization",
+      },
+    ],
+  },
+  {
+    label: "学习经历",
+    title: "studyExperience",
+    children: [
+      {
+        name: "入学年月",
+        id: "false",
+        type:"date-picker",
+        title: "entranceTime",
+      },
+      {
+        name: "毕业年月",
+        id: "false",
+        type:"date-picker",
+        title: "graduateTime",
+      },
+      {
+        name: "学习方式",
+        id: "false",
+        type:"select",
+        title: "learningStyle",
+      },
+      {
+        name: "在学单位类别",
+        id: "false",
+        type:"select",
+        title: "unitCategory",
+      },
+      {
+        name: "学历",
+        id: "false",
+        type:"select",
+        title: "educationBackground",
+      },
+      {
+        name: "获得学历的国家(地区)",
+        id: "false",
+        type:"select",
+        title: "getEducationBackgroundNation",
+      },
+      {
+        name: "获得学历的院校或机构",
+        id: "false",
+        type:"input",
+        title: "getEducationBackgroundAcademy",
+      },
+      {
+        name: "专业",
+        id: "false",
+        type:"select",
+        title: "major",
+      },
+      {
+        name: "其他专业",
+        id: "false",
+        type:"input",
+        title: "elseMajor",
+      },
+      {
+        name: "学位层次",
+        id: "false",
+        type:"select",
+        title: "gradation",
+      },
+      {
+        name: "学位名称",
+        id: "false",
+        type:"select",
+        title: "degreeLevel",
+      },
+      {
+        name: "获得学位的国家(地区)",
+        id: "false",
+        type:"select",
+        title: "getDegreeNation",
+      },
+      {
+        name: "获得学位的院校或机构",
+        id: "false",
+        type:"input",
+        title: "getDegreeNaAcademy",
+      },
+      {
+        name: "学位授予年月",
+        id: "false",
+        type:"date-picker",
+        title: "awardTime",
+      },
+      {
+        name: "是否师范类专业",
+        id: "false",
+        type:"select",
+        title: "isTeacherTraining",
+      },
+      {
+        name: "最高学历标识",
+        id: "false",
+        type:"input",
+        title: "highestEducation",
+      },
+      {
+        name: "第一学历标识",
+        id: "false",
+        type:"input",
+        title: "firstEducation",
+      },
+    ],
+  },
+  {
+    label: "国内培训",
+    title: "domesticTraining",
+    children: [
+      {
+        name: "培训项目名称",
+        id: "false",
+        type:"input",
+        title: "trainingName",
+      },
+      {
+        name: "培训年度",
+        id: "false",
+        type:"date-picker",
+        title: "trainingYear",
+      },
+      {
+        name: "培训类别",
+        id: "false",
+        type:"input",
+        title: "trainingCategory",
+      },
+      {
+        name: "培训机构名称",
+        id: "false",
+        type:"input",
+        title: "trainingOrganization",
+      },
+      {
+        name: "培训方式",
+        id: "false",
+        type:"select",
+        title: "cultivateWay",
+      },
+      {
+        name: "培训获得学时",
+        id: "false",
+        type:"input",
+        title: "period",
+      },
+      {
+        name: "培训获得学分",
+        id: "false",
+        type:"input",
+        title: "credit",
+      },
+      {
+        name: "培训开始日期",
+        id: "false",
+        type:"date-picker",
+        title: "trainStart",
+      },
+      {
+        name: "培训结束日期",
+        id: "false",
+        type:"date-picker",
+        title: "trainEnd",
+      },
+    ],
+  },
+  {
+    label: "海外研修",
+    title: "studyAbroad",
+    children: [
+      {
+        name: "培训年度",
+        id: "false",
+        type:"date-picker",
+        title: "cultivateYear",
+      },
+      {
+        name: "开始日期",
+        id: "false",
+        type:"date-picker",
+        title: "startTime",
+      },
+      {
+        name: "结束日期",
+        id: "false",
+        type:"date-picker",
+        title: "endTime",
+      },
+      {
+        name: "国家(地区)",
+        id: "false",
+        type:"cascader",
+        title: "area",
+      },
+      {
+        name: "研修(访学)机构名称",
+        id: "false",
+        type:"input",
+        title: "organizationName",
+      },
+      {
+        name: "海外研修项目名称",
+        id: "false",
+        type:"input",
+        title: "projectName",
+      },
+      {
+        name: "项目组织单位名称",
+        id: "false",
+        type:"input",
+        title: "unitName",
+      },
+    ],
+  },
+  {
+    label: "工作经历",
+    title: "workExperience",
+    children: [
+      {
+        name: "任职单位名称",
+        id: "false",
+        type:"input",
+        title: "employerName",
+      },
+      {
+        name: "任职开始年月",
+        id: "false",
+        type:"date-picker",
+        title: "officeStart",
+      },
+      {
+        name: "任职结束年月",
+        id: "false",
+        type:"date-picker",
+        title: "officeEnd",
+      },
+      {
+        name: "单位性质类别",
+        id: "false",
+        type:"select",
+        title: "unitNature",
+      },
+      {
+        name: "任职岗位",
+        id: "false",
+        type:"input",
+        title: "position",
+      },
+      {
+        name: "证明人",
+        id: "false",
+        type:"input",
+        title: "certifier",
+      },
+      {
+        name: "奖惩情况",
+        id: "false",
+        type:"input",
+        title: "rewardsPunishment",
+      },
+      {
+        name: "是否最新",
+        id: "false",
+        type:"input",
+        title: "isNewest",
+      },
+      {
+        name: "班主任年限",
+        id: "false",
+        type:"input",
+        title: "teacherAgeLimit",
+      },
+      {
+        name: "是否农村",
+        id: "false",
+        type:"select",
+        title: "isCountry",
+      },
+    ],
+  },
+  {
+    label: "交流轮岗",
+    title: "workShift",
+    children: [
+      {
+        name: "交流轮岗类型",
+        id: "false",
+        type:"select",
+        title: "employerName",
+      },
+      {
+        name: "开始年月",
+        id: "false",
+        type:"date-picker",
+        title: "startTime",
+      },
+      {
+        name: "结束年月",
+        id: "false",
+        type:"date-picker",
+        title: "endTime",
+      },
+      {
+        name: "原单位名称",
+        id: "false",
+        type:"input",
+        title: "oldUnitName",
+      },
+      {
+        name: "交流轮岗单位名称",
+        id: "false",
+        type:"input",
+        title: "workShiftName",
+      },
+      {
+        name: "是否调动人事关系",
+        id: "false",
+        type:"select",
+        title: "isTransfer",
+      },
+    ],
+  },
+  {
+    label: "岗位聘任",
+    title: "positionRecruitment",
+    children: [
+      {
+        name: "岗位类别",
+        id: "false",
+        type:"select",
+        title: "jobCategory",
+      },
+      {
+        name: "岗位等级",
+        id: "false",
+        type:"select",
+        title: "jobGrade",
+      },
+      {
+        name: "聘任开始日期",
+        id: "false",
+        type:"date-picker",
+        title: "hireTime",
+      },
+      {
+        name: "兼任岗位类别",
+        id: "false",
+        type:"select",
+        title: "additionalJobCategory",
+      },
+      {
+        name: "兼任岗位等级",
+        id: "false",
+        type:"select",
+        title: "additionalJobGrade",
+      },
+      {
+        name: "行政职务",
+        id: "false",
+        type:"select",
+        title: "administrativeRank",
+      },
+      {
+        name: "行政职级",
+        id: "false",
+        type:"select",
+        title: "administrativeDuty",
+      },
+      {
+        name: "部门(科室)",
+        id: "false",
+        type:"select",
+        title: "affiliationDepartment",
+      },
+      {
+        name: "任职开始年月",
+        id: "false",
+        type:"date-picker",
+        title: "officeStart",
+      },
+    ],
+  },
+  {
+    label: "专业技术职务聘任",
+    title: "technicalAppointment",
+    children: [
+      {
+        name: "聘任专业技术职务",
+        id: "false",
+        type:"select",
+        title: "engageJob",
+      },
+      {
+        name: "聘任开始日期",
+        id: "false",
+        type:"date-picker",
+        title: "engageStart",
+      },
+      {
+        name: "聘任结束日期",
+        id: "false",
+        type:"date-picker",
+        title: "engageEnd",
+      },
+      {
+        name: "聘任单位名称",
+        id: "false",
+        type:"input",
+        title: "engageName",
+      },
+      {
+        name: "熟悉专业有何专长",
+        id: "false",
+        type:"input",
+        title: "advantage",
+      },
+    ],
+  },
+  {
+    label: "担任培训专家情况",
+    title: "expertSituation",
+    children: [
+      {
+        name: "活动名称",
+        id: "false",
+        type:"input",
+        title: "activityName",
+      },
+      {
+        name: "培训主题",
+        id: "false",
+        type:"input",
+        title: "cultivateTheme",
+      },
+      {
+        name: "培训级别",
+        id: "false",
+        type:"select",
+        title: "cultivateRank",
+      },
+      {
+        name: "培训时间",
+        id: "false",
+        type:"date-picker",
+        title: "cultivateTime",
+      },
+      {
+        name: "组织单位",
+        id: "false",
+        type:"input",
+        title: "organization",
+      },
+    ],
+  },
+  {
+    label: "担任评审专家情况",
+    title: "assessmentExperts",
+    children: [
+      {
+        name: "活动名称",
+        id: "false",
+        type:"input",
+        title: "activityName",
+      },
+      {
+        name: "评审活动级别",
+        id: "false",
+        type:"select",
+        title: "activityLevel",
+      },
+      {
+        name: "评审时间",
+        id: "false",
+        type:"date-picker",
+        title: "reviewTime",
+      },
+      {
+        name: "组织单位",
+        id: "false",
+        type:"input",
+        title: "organization",
+      },
+    ],
+  },
+  {
+    label: "名师工作室负责人情况",
+    title: "teacherWorkRoom",
+    children: [
+      {
+        name: "名师工作室名称",
+        id: "false",
+        type:"input",
+        title: "teacherWorkRoomName",
+      },
+      {
+        name: "工作室人数",
+        id: "false",
+        type:"input",
+        title: "workRoomCount",
+      },
+      {
+        name: "组建开始时间",
+        id: "false",
+        type:"date-picker",
+        title: "startTime",
+      },
+      {
+        name: "结束时间",
+        id: "false",
+        type:"date-picker",
+        title: "endTime",
+      },
+      {
+        name: "工作室级别",
+        id: "false",
+        type:"select",
+        title: "workRoomRank",
+      },
+      {
+        name: "典型成果",
+        id: "false",
+        type:"input",
+        title: "achievement",
+      },
+    ],
+  },
+  {
+    label: "承担特色课程领衔教师",
+    title: "characteristicCourseTeacher",
+    children: [
+      {
+        name: "学校特色课程名称",
+        id: "false",
+        type:"input",
+        title: "courseName",
+      },
+      {
+        name: "担任时间",
+        id: "false",
+        type:"date-picker",
+        title: "actAsTime",
+      },
+      {
+        name: "是否领衔教师",
+        id: "false",
+        type:"select",
+        title: "isLeanTeacher",
+      },
+      {
+        name: "课时",
+        id: "false",
+        type:"input",
+        title: "hour",
+      },
+    ],
+  },
+  {
+    label: "年度考核结果",
+    title: "annualAssessment",
+    children: [
+      {
+        name: "考核年度",
+        id: "false",
+        type:"date-picker",
+        title: "assessmentTime",
+      },
+      {
+        name: "考核单位名称",
+        id: "false",
+        type:"input",
+        title: "assessmentUnitName",
+      },
+      {
+        name: "考核结果",
+        id: "false",
+        type:"select",
+        title: "assessmentResult",
+      },
+      {
+        name: "考核确认日期",
+        id: "false",
+        type:"date-picker",
+        title: "confirmationDate",
+      },
+    ],
+  },
+  {
+    label: "教师资格",
+    title: "teacherCertification",
+    children: [
+      {
+        name: "资格证种类",
+        id: "false",
+        type:"select",
+        title: "certificationKind",
+      },
+      {
+        name: "认证学段",
+        id: "false",
+        type:"select",
+        title: "authenticationStudying",
+      },
+      {
+        name: "认证学科",
+        id: "false",
+        type:"select",
+        title: "authenticationSubject",
+      },
+      {
+        name: "颁发机构",
+        id: "false",
+        type:"input",
+        title: "issueOrganization",
+      },
+      {
+        name: "首次注册日期",
+        id: "false",
+        type:"date-picker",
+        title: "firstRegisterTime",
+      },
+      {
+        name: "定期注册日期",
+        id: "false",
+        type:"date-picker",
+        title: "regularRegisterTime",
+      },
+      {
+        name: "教师资格证号码",
+        id: "false",
+        type:"input",
+        title: "teacherCertificationID",
+      },
+      {
+        name: "证书颁发日期",
+        id: "false",
+        type:"date-picker",
+        title: "issuingCertificatesTime",
+      },
+      {
+        name: "首次注册结论",
+        id: "false",
+        type:"select",
+        title: "firstRegisterConclusion",
+      },
+      {
+        name: "定期注册结论",
+        id: "false",
+        type:"select",
+        title: "regularRegisterConclusion",
+      },
+    ],
+  },
+  {
+    label: "教师资格证认定信息",
+    title: "teacherCertificationAffirm",
+    children: [
+      {
+        name: "证照状态",
+        id: "false",
+        type:"select",
+        title: "certificateState",
+      },
+      {
+        name: "证书签发日期",
+        id: "false",
+        type:"date-picker",
+        title: "releaseDate",
+      },
+      {
+        name: "资格种类",
+        id: "false",
+        type:"input",
+        title: "qualificationKind",
+      },
+      {
+        name: "认证机构名称",
+        id: "false",
+        type:"input",
+        title: "organizationName",
+      },
+      {
+        name: "认定批次",
+        id: "false",
+        type:"input",
+        title: "affirmBatch",
+      },
+      {
+        name: "证书编号",
+        id: "false",
+        type:"input",
+        title: "certificateId",
+      },
+      {
+        name: "教师资格证编号",
+        id: "false",
+        type:"input",
+        title: "teacherCertificationId",
+      },
+    ],
+  },
+  {
+    label: "培训学时记录",
+    title: "trainingHours",
+    children: [
+      {
+        name: "培训开始时间",
+        id: "false",
+        type:"date-picker",
+        title: "trainStartTime",
+      },
+      {
+        name: "培训结束时间",
+        id: "false",
+        type:"date-picker",
+        title: "trainEndTime",
+      },
+      {
+        name: "教师培训学时",
+        id: "false",
+        type:"input",
+        title: "trainingHours",
+      },
+      {
+        name: "组织培训单位",
+        id: "false",
+        type:"input",
+        title: "trainOrganizationName",
+      },
+    ],
+  },
+  {
+    label: "证书信息",
+    title: "certificateInformation",
+    children: [
+      {
+        name: "证书类型",
+        id: "false",
+        type:"select",
+        title: "certificateType",
+      },
+      {
+        name: "证书编号",
+        id: "false",
+        type:"input",
+        title: "certificateId",
+      },
+      {
+        name: "语言证书名称",
+        id: "false",
+        type:"select",
+        title: "languageCertificateName",
+      },
+      {
+        name: "证书名称",
+        id: "false",
+        type:"input",
+        title: "certificateName",
+      },
+      {
+        name: "发证年月",
+        id: "false",
+        type:"date-picker",
+        title: "getCertificateTime",
+      },
+      {
+        name: "发证单位",
+        id: "false",
+        type:"input",
+        title: "getCertificateUnit",
+      },
+    ],
+  },
+  {
+    label: "社会体育指导员证书",
+    title: "societySportsGuidanceCertificate",
+    children: [
+      {
+        name: "证书等级",
+        id: "false",
+        type:"select",
+        title: "certificateGrade",
+      },
+      {
+        name: "发证时间",
+        id: "false",
+        type:"date-picker",
+        title: "getCertificateTime",
+      },
+      {
+        name: "指导项目",
+        id: "false",
+        type:"input",
+        title: "guidanceProject",
+      },
+      {
+        name: "指导站点",
+        id: "false",
+        type:"input",
+        title: "guidanceSite",
+      },
+      {
+        name: "证书编号",
+        id: "false",
+        type:"input",
+        title: "certificateId",
+      },
+      {
+        name: "发证单位",
+        id: "false",
+        type:"input",
+        title: "getCertificateUnit",
+      },
+    ],
+  },
+  {
+    label: "社会体育指导员技术等级培训信息",
+    title: "societySportsGuidanceTrainMessage",
+    children: [
+      {
+        name: "发证单位",
+        id: "false",
+        type:"input",
+        title: "issueUnit",
+      },
+      {
+        name: "发证时间",
+        id: "false",
+        type:"date-picker",
+        title: "issueTime",
+      },
+      {
+        name: "成绩",
+        id: "false",
+        type:"input",
+        title: "trainScore",
+      },
+      {
+        name: "民族",
+        id: "false",
+        type:"select",
+        title: "nation",
+      },
+      {
+        name: "指导项目",
+        id: "false",
+        type:"input",
+        title: "guidanceProject",
+      },
+      {
+        name: "证书编号",
+        id: "false",
+        type:"input",
+        title: "certificateId",
+      },
+      {
+        name: "指导站点",
+        id: "false",
+        type:"input",
+        title: "guidanceSite",
+      },
+    ],
+  },
+  {
+    label: "等级裁判员信息",
+    title: "refereeInformation",
+    children: [
+      {
+        name: "项目",
+        id: "false",
+        type:"input",
+        title: "project",
+      },
+      {
+        name: "裁判等级",
+        id: "false",
+        type:"input",
+        title: "judgeGrade",
+      },
+      {
+        name: "批准日期",
+        id: "false",
+        type:"date-picker",
+        title: "ratifyTime",
+      },
+      {
+        name: "联系手机",
+        id: "false",
+        type:"input",
+        title: "relationPhone",
+      },
+      {
+        name: "备注",
+        id: "false",
+        type:"input",
+        title: "comment",
+      },
+      {
+        name: "接收时间",
+        id: "false",
+        type:"date-picker",
+        title: "receptionTime",
+      },
+    ],
+  },
+  {
+    label: "国家医药证书",
+    title: "nationMedicineCertificate",
+    children: [
+      {
+        name: "国家医药证书名称",
+        id: "false",
+        type:"input",
+        title: "nationMedicineCertificateName",
+      },
+      {
+        name: "证书(批件)号",
+        id: "false",
+        type:"input",
+        title: "certificateId",
+      },
+      {
+        name: "本人角色",
+        id: "false",
+        type:"select",
+        title: "selfRole",
+      },
+      {
+        name: "颁布或批准时间",
+        id: "false",
+        type:"date-picker",
+        title: "ratifyTime",
+      },
+      {
+        name: "有效期",
+        id: "false",
+        type:"date-picker",
+        title: "inDateTime",
+      },
+      {
+        name: "是否是代表性成果和项目",
+        id: "false",
+        type:"select",
+        title: "isRepresentativeAchievement",
+      },
+    ],
+  },
+  {
+    label: "国家标准或行业标准",
+    title: "governmentStandard",
+    children: [
+      {
+        name: "标准号",
+        id: "false",
+        type:"input",
+        title: "standardId",
+      },
+      {
+        name: "本人角色",
+        id: "false",
+        type:"select",
+        title: "selfRole",
+      },
+      {
+        name: "发布日期",
+        id: "false",
+        type:"date-picker",
+        title: "releaseTime",
+      },
+      {
+        name: "发布单位",
+        id: "false",
+        type:"input",
+        title: "releaseUnit",
+      },
+      {
+        name: "是否是代表性成果和项目",
+        id: "false",
+        type:"select",
+        title: "isRepresentativeAchievement",
+      },
+    ],
+  },
+  {
+    label: "语言能力",
+        title: "languageCapacity",
+        children: [
+      {
+        name: "语种",
+        id: "false",
+        type:"select",
+        title: "language",
+      },
+      {
+        name: "掌握程度",
+        id: "false",
+        type:"select",
+        title: "masteryDegree",
+      },
+    ],
+  },
+  {
+    label: "项目（课题）",
+        title: "projectTopic",
+        children: [
+      {
+        name: "项目类型",
+        id: "false",
+        type:"select",
+        title: "projectType",
+      },
+      {
+        name: "项目名称",
+        id: "false",
+        type:"input",
+        title: "projectName",
+      },
+      {
+        name: "项目批准号",
+        id: "false",
+        type:"input",
+        title: "projectRatifyId",
+      },
+      {
+        name: "项目学科领域",
+        id: "false",
+        type:"select",
+        title: "subjectAmbit",
+      },
+      {
+        name: "项目经费额度",
+        id: "false",
+        type:"input",
+        title: "expenditureLimit",
+      },
+      {
+        name: "项目开始年月",
+        id: "false",
+        type:"date-picker",
+        title: "startTime",
+      },
+      {
+        name: "项目结束年月",
+        id: "false",
+        type:"date-picker",
+        title: "endTime",
+      },
+      {
+        name: "项目中本人角色",
+        id: "false",
+        type:"select",
+        title: "selfRole",
+      },
+      {
+        name: "本人项目排名",
+        id: "false",
+        type:"input",
+        title: "selfRanking",
+      },
+      {
+        name: "项目委托单位",
+        id: "false",
+        type:"input",
+        title: "entrustUnit",
+      },
+      {
+        name: "项目来源",
+        id: "false",
+        type:"select",
+        title: "projectSource",
+      },
+      {
+        name: "是否是代表性成果和项目",
+        id: "false",
+        type:"select",
+        title: "isRepresentativeAchievement",
+      },
+      {
+        name: "本人工作描述",
+        id: "false",
+        type:"input",
+        title: "workDescribe",
+      },
+    ],
+  },
+  {
+    label: "骨干教师情况",
+        title: "backboneTeacher",
+        children: [
+      {
+        name: "骨干教师类型",
+        id: "false",
+        type:"select",
+        title: "backboneTeacherType",
+      },
+      {
+        name: "骨干教师级别",
+        id: "false",
+        type:"select",
+        title: "backboneTeacherRank",
+      },
+      {
+        name: "骨干称号名称",
+        id: "false",
+        type:"input",
+        title: "backboneTeacherName",
+      },
+      {
+        name: "获得骨干教师称号时间",
+        id: "false",
+        type:"date-picker",
+        title: "getBackboneTeacherTime",
+      },
+    ],
+  },
+  {
+    label: "指导学生参加获奖",
+        title: "instructStudentsAward",
+        children: [
+      {
+        name: "指导学生获奖名称",
+        id: "false",
+        type:"input",
+        title: "getAwardName",
+      },
+      {
+        name: "本人角色",
+        id: "false",
+        type:"select",
+        title: "selfRole",
+      },
+      {
+        name: "指导学生获奖等级",
+        id: "false",
+        type:"input",
+        title: "getAwardGrade",
+      },
+      {
+        name: "指导学生获奖级别",
+        id: "false",
+        type:"select",
+        title: "getAwardRank",
+      },
+      {
+        name: "指导学生获奖年月",
+        id: "false",
+        type:"date-picker",
+        title: "getAwardTime",
+      },
+      {
+        name: "本人承担工作描述",
+        id: "false",
+        type:"input",
+        title: "jobDescription",
+      },
+    ],
+  },
+  {
+    label: "奖励",
+        title: "award",
+        children: [
+      {
+        name: "奖励类别",
+        id: "false",
+        type:"select",
+        title: "awardCategory",
+      },
+      {
+        name: "获奖年月",
+        id: "false",
+        type:"date-picker",
+        title: "getAwardTime",
+      },
+      {
+        name: "奖励名称",
+        id: "false",
+        type:"input",
+        title: "awardName",
+      },
+      {
+        name: "奖励级别",
+        id: "false",
+        type:"select",
+        title: "awardRank",
+      },
+      {
+        name: "奖励等级",
+        id: "false",
+        type:"select",
+        title: "awardGrade",
+      },
+      {
+        name: "奖励其他等级",
+        id: "false",
+        type:"input",
+        title: "awardElseGrade",
+      },
+      {
+        name: "本人排名",
+        id: "false",
+        type:"input",
+        title: "selfRanking",
+      },
+      {
+        name: "授权国家（地区）",
+        id: "false",
+        type:"select",
+        title: "area",
+      },
+      {
+        name: "授奖单位",
+        id: "false",
+        type:"input",
+        title: "awardPrizeUnit",
+      },
+    ],
+  },
+  // {
+  //   label: "奖励",
+  //   children: [
+  //     {
+  //       name: "奖励类别",
+  //       id: "false",
+  //       title: "staff",
+  //     },
+  //     {
+  //       name: "获奖年月",
+  //       id: "false",
+  //       title: "staff",
+  //     },
+  //     {
+  //       name: "奖励名称",
+  //       id: "false",
+  //       title: "staff",
+  //     },
+  //     {
+  //       name: "奖励级别",
+  //       id: "false",
+  //       title: "staff",
+  //     },
+  //     {
+  //       name: "奖励等级",
+  //       id: "false",
+  //       title: "staff",
+  //     },
+  //     {
+  //       name: "奖励其他等级",
+  //       id: "false",
+  //       title: "staff",
+  //     },
+  //     {
+  //       name: "本人排名",
+  //       id: "false",
+  //       title: "staff",
+  //     },
+  //     {
+  //       name: "授权国家（地区）",
+  //       id: "false",
+  //       title: "staff",
+  //     },
+  //     {
+  //       name: "授奖单位",
+  //       id: "false",
+  //       title: "staff",
+  //     },
+  //   ],
+  // },
+  {
+    label: "荣誉称号",
+        title: "honoraryTitle",
+        children: [
+      {
+        name: "荣誉称号",
+        id: "false",
+        type:"select",
+        title: "honorName",
+      },
+      {
+        name: "获得称号时间",
+        id: "false",
+        type:"date-picker",
+        title: "getHonorTime",
+      },
+      {
+        name: "荣誉称号级别",
+        id: "false",
+        type:"select",
+        title: "getHonorRank",
+      },
+      {
+        name: "签章单位",
+        id: "false",
+        type:"input",
+        title: "signatureUnit",
+      },
+    ],
+  },
+  {
+    label: "班主任荣誉",
+        title: "classTeacherHonor",
+        children: [
+      {
+        name: "荣誉名称",
+        id: "false",
+        type:"input",
+        title: "honorName",
+      },
+      {
+        name: "获奖时间",
+        id: "false",
+        type:"date-picker",
+        title: "getAwardTime",
+      },
+      {
+        name: "签章单位",
+        id: "false",
+        type:"input",
+        title: "signatureUnit",
+      },
+    ],
+  },
+  {
+    label: "先进班集体荣誉",
+        title: "advancedClass",
+        children: [
+      {
+        name: "班集体情况",
+        id: "false",
+        type:"input",
+        title: "classCondition",
+      },
+      {
+        name: "先进班集体获奖时间",
+        id: "false",
+        type:"date-picker",
+        title: "signatureTime",
+      },
+      {
+        name: "先进班集体获奖级别",
+        id: "false",
+        type:"select",
+        title: "getAwardRank",
+      },
+      {
+        name: "签章单位",
+        id: "false",
+        type:"input",
+        title: "signatureUnit",
+      },
+    ],
+  },
+  {
+    label: "入选人才项目",
+    title: "talentProject",
+    children: [
+      {
+        name: "入选人才项目名称",
+        id: "false",
+        type:"select",
+        title: "talentProjectName",
+      },
+      {
+        name: "入选年份",
+        id: "false",
+        type:"date-picker",
+        title: "talentProjectTime",
+      },
+    ],
+  },
+  {
+    label: "著作",
+    title: "production",
+    children: [
+      {
+        name: "著作类别",
+        id: "false",
+        type:"select",
+        title: "productionType",
+      },
+      {
+        name: "著作名称",
+        id: "false",
+        type:"input",
+        title: "productionName",
+      },
+      {
+        name: "著作学科领域",
+        id: "false",
+        type:"select",
+        title: "subjectAmbit",
+      },
+      {
+        name: "出版日期",
+        id: "false",
+        type:"date-picker",
+        title: "publicationTime",
+      },
+      {
+        name: "出版社名称",
+        id: "false",
+        type:"input",
+        title: "pressName",
+      },
+      {
+        name: "出版号",
+        id: "false",
+        type:"input",
+        title: "publicationId",
+      },
+      {
+        name: "著作中本人角色",
+        id: "false",
+        type:"select",
+        title: "inProductionSelfRole",
+      },
+      {
+        name: "总字数（字）",
+        id: "false",
+        type:"input",
+        title: "wordNumber",
+      },
+      {
+        name: "本人撰写字数（字）",
+        id: "false",
+        type:"input",
+        title: "selfWrite",
+      },
+      {
+        name: "是否是代表性成果和项目",
+        id: "false",
+        type:"select",
+        title: "isRepresentativeAchievement",
+      },
+    ],
+  },
+  {
+    label: "论文案例",
+    title: "thesisCase",
+    children: [
+      {
+        name: "论文案例名称",
+        id: "false",
+        type:"input",
+        title: "paperCaseName",
+      },
+      {
+        name: "论文案例级别",
+        id: "false",
+        type:"select",
+        title: "paperCaseRank",
+      },
+      {
+        name: "发表刊物名称",
+        id: "false",
+        type:"input",
+        title: "issueJournalsName",
+      },
+      {
+        name: "发表刊物级别",
+        id: "false",
+        type:"select",
+        title: "issueJournalsRank",
+      },
+      {
+        name: "是否核心期刊",
+        id: "false",
+        type:"select",
+        title: "isCoreJournal",
+      },
+      {
+        name: "核心期刊类别",
+        id: "false",
+        type:"select",
+        title: "coreJournalType",
+      },
+      {
+        name: "发表年月",
+        id: "false",
+        type:"date-picker",
+        title: "publishTime",
+      },
+      {
+        name: "卷号",
+        id: "false",
+        type:"input",
+        title: "reelId",
+      },
+      {
+        name: "期号",
+        id: "false",
+        type:"input",
+        title: "expectId",
+      },
+      {
+        name: "起始页码",
+        id: "false",
+        type:"input",
+        title: "startPage",
+      },
+      {
+        name: "结束页码",
+        id: "false",
+        type:"input",
+        title: "endPage",
+      },
+      {
+        name: "本人角色",
+        id: "false",
+        type:"select",
+        title: "selfRole",
+      },
+      {
+        name: "论文学科领域",
+        id: "false",
+        type:"select",
+        title: "ambit",
+      },
+      {
+        name: "论文案例收录情况",
+        id: "false",
+        type:"input",
+        title: "publicationId",
+      },
+      {
+        name: "是否发表",
+        id: "false",
+        type:"select",
+        title: "isPublic",
+      },
+      {
+        name: "是否获奖",
+        id: "false",
+        type:"select",
+        title: "isGetAward",
+      },
+      {
+        name: "论文获奖年月",
+        id: "false",
+        type:"date-picker",
+        title: "getAwardTime",
+      },
+      {
+        name: "授奖单位",
+        id: "false",
+        type:"input",
+        title: "awardPrizeUnit",
+      },
+      {
+        name: "论文奖励名称",
+        id: "false",
+        type:"input",
+        title: "awardName",
+      },
+      {
+        name: "是否是代表性成果和项目",
+        id: "false",
+        type:"select",
+        title: "isRepresentativeAchievement",
+      },
+      {
+        name: "论文奖励等级",
+        id: "false",
+        type:"select",
+        title: "awardGrade",
+      },
+    ],
+  },
+  {
+    label: "文艺作品",
+    title: "literaryWorks",
+    children: [
+      {
+        name: "文艺作品类别",
+        id: "false",
+        type:"select",
+        title: "literaryWorksType",
+      },
+      {
+        name: "文艺作品名称",
+        id: "false",
+        type:"input",
+        title: "literaryWorksName",
+      },
+      {
+        name: "本人角色",
+        id: "false",
+        type:"select",
+        title: "selfRole",
+      },
+      {
+        name: "完成时间",
+        id: "false",
+        type:"date-picker",
+        title: "accomplishTime",
+      },
+      {
+        name: "完成地点",
+        id: "false",
+        type:"input",
+        title: "accomplishPlace",
+      },
+      {
+        name: "本人工作描述",
+        id: "false",
+        type:"input",
+        title: "workDescribe",
+      },
+      {
+        name: "是否是代表性成果和项目",
+        id: "false",
+        type:"select",
+        title: "isRepresentativeAchievement",
+      },
+    ],
+  },
+  {
+    label: "专利或软件著作权",
+    title: "patent",
+    children: [
+      {
+        name: "专利或软件著作权类型",
+        id: "false",
+        type:"select",
+        title: "patentType",
+      },
+      {
+        name: "专利或软件著作权名称",
+        id: "false",
+        type:"input",
+        title: "patentName",
+      },
+      {
+        name: "专利或软件学科领域",
+        id: "false",
+        type:"select",
+        title: "subjectAmbit",
+      },
+      {
+        name: "批准日期",
+        id: "false",
+        type:"date-picker",
+        title: "ratifyTime",
+      },
+      {
+        name: "本人角色",
+        id: "false",
+        type:"select",
+        title: "selfRole",
+      },
+      {
+        name: "本人工作描述",
+        id: "false",
+        type:"input",
+        title: "workDescribe",
+      },
+      {
+        name: "是否是代表性成果和项目",
+        id: "false",
+        type:"select",
+        title: "isRepresentativeAchievement",
+      },
+    ],
+  },
+  {
+    label: "咨询报告或研究报告",
+    title: "studyReport",
+    children: [
+      {
+        name: "报告题目",
+        id: "false",
+        type:"input",
+        title: "reportTitle",
+      },
+      {
+        name: "本人角色",
+        id: "false",
+        type:"select",
+        title: "selfRole",
+      },
+      {
+        name: "报告时间",
+        id: "false",
+        type:"date-picker",
+        title: "reportTime",
+      },
+      {
+        name: "委托方",
+        id: "false",
+        type:"input",
+        title: "client",
+      },
+      {
+        name: "是否是代表性成果和项目",
+        id: "false",
+        type:"select",
+        title: "isRepresentativeAchievement",
+      },
+    ],
+  },
+  {
+    label: "家庭成员及重要社会关系",
+    title: "familyTies",
+    children: [
+      {
+        name: "称谓",
+        id: "false",
+        type:"select",
+        title: "appellation",
+      },
+      {
+        name: "家庭成员姓名",
+        id: "false",
+        type:"input",
+        title: "name",
+      },
+      {
+        name: "家庭成员年龄",
+        id: "false",
+        type:"input",
+        title: "age",
+      },
+      {
+        name: "政治面貌",
+        id: "false",
+        type:"select",
+        title: "politicsStatus",
+      },
+      {
+        name: "工作单位及职务",
+        id: "false",
+        type:"input",
+        title: "organizationWork",
+      },
+      {
+        name: "是否诸暨市教师",
+        id: "false",
+        type:"select",
+        title: "isZJTeacher",
+      },
+      {
+        name: "是否在农村学校任教",
+        id: "false",
+        type:"select",
+        title: "isInVillage",
+      },
+      {
+        name: "家庭成员教龄",
+        id: "false",
+        type:"input",
+        title: "teachAge",
+      },
+    ],
+  },
+  {
+    label: "师德考核",
+    title: "teacherMeritAssess",
+    children: [
+      {
+        name: "师德考核时间",
+        id: "false",
+        type:"date-picker",
+        title: "teacherMeritAssessTime",
+      },
+      {
+        name: "师德考核结论",
+        id: "false",
+        type:"select",
+        title: "teacherMeritAssessResult",
+      },
+      {
+        name: "师德考核单位名称",
+        id: "false",
+        type:"input",
+        title: "teacherMeritAssessUnitName",
+      },
+      {
+        name: "荣誉记录描述",
+        id: "false",
+        type:"input",
+        title: "recordHonorDescription",
+      },
+      {
+        name: "荣誉发生日期",
+        id: "false",
+        type:"date-picker",
+        title: "honorHappenTime",
+      },
+      {
+        name: "荣誉级别",
+        id: "false",
+        type:"select",
+        title: "honorRank",
+      },
+      {
+        name: "荣誉授予单位名称",
+        id: "false",
+        type:"input",
+        title: "conferUnitName",
+      },
+      {
+        name: "获得荣誉称号",
+        id: "false",
+        type:"input",
+        title: "honoraryTitle",
+      },
+    ],
+  },
+  {
+    label: "处分信息",
+    title: "disciplinaryInformation",
+    children: [
+      {
+        name: "处分类型",
+        id: "false",
+        type:"select",
+        title: "disciplinaryInformationType",
+      },
+      {
+        name: "违规内容",
+        id: "false",
+        type:"input",
+        title: "deregulationContent",
+      },
+      {
+        name: "通报时间",
+        id: "false",
+        type:"date-picker",
+        title: "notificationTime",
+      },
+      {
+        name: "通报单位",
+        id: "false",
+        type:"input",
+        title: "reportingUnit",
+      },
+    ],
+  },
+];
+export const LIST = [
+  {
+    label: "个人信息",
+    title: "staff",
+    children: [
+      {
+        name: "姓名",
+        id: "false",
+        type:"input",
+        title: "name",
+      },
+      {
+        name: "性别",
+        id: "false",
+        type:"input",
+        title: "sex",
+      },
+      {
+        name: "曾用名",
+        id: "false",
+        type:"input",
+        title: "beforeName",
+      },
+      {
+        name: "民族",
+        id: "false",
+        type:"input",
+        title: "nation",
+      },
+      {
+        name: "姓名拼音",
+        id: "false",
+        type:"input",
+        title: "spellName",
+      },
+      {
+        name: "出生地",
+        id: "false",
+        type:"input",
+        title: "staff",
+      },
+      {
+        name: "国家和地区",
+        id: "false",
+        type:"input",
+        title: "area",
+      },
+      {
+        name: "籍贯",
+        id: "false",
+        type:"input",
+        title: "staff",
+      },
+      {
+        name: "政治面貌",
+        id: "false",
+        type:"input",
+        title: "politicsStatus",
+      },
+      {
+        name: "入党时间",
+        id: "false",
+        type:"input",
+        title: "joinTime",
+      },
+      {
+        name: "婚姻",
+        id: "false",
+        type:"input",
+        title: "marriage",
+      },
+      {
+        name: "健康状况",
+        id: "false",
+        type:"input",
+        title: "physicalCondition",
+      },
+      {
+        name: "毕业院校",
+        id: "false",
+        type:"input",
+        title: "graduateSchool",
+      },
+      {
+        name: "所学专业",
+        id: "false",
+        type:"input",
+        title: "specialty",
+      },
+      {
+        name: "最高学历",
+        id: "false",
+        type:"input",
+        title: "tallEducation",
+      },
+      {
+        name: "出生日期",
+        id: "false",
+        type:"input",
+        title: "birthTime",
+      },
+      {
+        name: "年龄",
+        id: "false",
+        type:"input",
+        title: "age",
+      },
+      {
+        name: "个人邮箱",
+        id: "false",
+        type:"input",
+        title: "email",
+      },
+      {
+        name: "手机号",
+        id: "false",
+        type:"input",
+        title: "phone",
+      },
+      {
+        name: "从教开始时间",
+        id: "false",
+        type:"input",
+        title: "teachTime",
+      },
+      {
+        name: "教龄",
+        id: "false",
+        type:"input",
+        title: "teachTime",
+      },
+    ],
+  },
+];
 export default {
-    USERINFO,
-}
+  USERINFO,
+};

@@ -1,5 +1,6 @@
 import { qiniuToken } from "../../api/upload/upload";
 import * as QiNiu from "qiniu-js";
+import { ElLoading } from 'element-plus'
 
 // 需用户登录，头部携带token请求
 // 获取七牛token
@@ -9,7 +10,6 @@ const getUploadToken2 = async function () {
     F_uid:"01202877352560015375",
     F_file_count: 1,
   });
-  console.log(result);
   if (result && result.F_responseNo === 10000) {
     return result;
   } else {
@@ -60,6 +60,8 @@ export const uploadHandler = async function (
     // return Promise.reject(new Error('暂未登录'));
     throw new Error('暂未登录');
   }
+  // console.log(token);
+
   // if (!token) return Promise.reject(new Error('暂未登录'));
   const { F_resource_domain, F_base_key, F_upload_token, F_resource_ids } = token;
   const observable = QiNiu.upload(
@@ -70,17 +72,25 @@ export const uploadHandler = async function (
     params.config
   );
   console.log('observable--', observable);
+  const loading  = ElLoading.service({
+    lock: true,
+    text: '上传中',
+    background: 'rgba(0, 0, 0, 0.7)',
+  })
   return new Promise((resole, reject) => {
     observable.subscribe(
       (next) => {
         // console.log('上传中--', next);
         onSpeed(next);
+        
       },
       (error) => {
+        loading.close()
         // console.log('上传错误--', error);
         reject(error);
       },
       (data) => {
+        loading.close()
         // console.log('成功----', data);
         resole({
           name: file.name,
@@ -91,6 +101,7 @@ export const uploadHandler = async function (
             ? `${F_resource_domain}/${data.key}?vframe/jpg/offset/${params.min}/w/${params.width}/h/${params.height}/`
             : "",
         });
+     
       }
     );
   });

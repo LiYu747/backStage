@@ -1,5 +1,5 @@
 import { http } from "@/utils/http";
-// master分支
+//登录获取token
 export const userLogin = (data) => {
   return http.request(
     "post",
@@ -8,15 +8,29 @@ export const userLogin = (data) => {
     {
       isNeedFullRes: false, // 是否需要返回完整的响应对象
       isShowLoading: true, // 是否显示loading
-      isNeedToken: true, // 是否需要token   
+      isNeedToken: false, // 是否需要token
     }
   );
 };
+
+export const codeLogin = (data) => {
+  return http.request(
+    "post",
+    "/teacher/loginByCode",
+    { data },
+    {
+      isNeedFullRes: false, // 是否需要返回完整的响应对象
+      isShowLoading: true, // 是否显示loading
+      isNeedToken: false, // 是否需要token
+    }
+  );
+};
+
 export const apiPost = (data) => {
   return http.request(
     "post",
     "/back/galleryType/findAll",
-    { data }, 
+    { data },
     {
       isNeedFullRes: false, // 是否需要返回完整的响应对象
       isShowLoading: true, // 是否显示loading
@@ -24,3 +38,5 @@ export const apiPost = (data) => {
     }
   );
 };
+
+

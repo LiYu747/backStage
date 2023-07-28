@@ -1,6 +1,15 @@
 <template>
   <div id="main-con">
-    <router-view />
+   <div >
+    <router-view  v-slot="{ Component }">
+      <keep-alive>
+        <component v-if="$route.meta.keepAlive" :is="Component" :key="$route.name"></component>
+      </keep-alive>
+      <component v-if="!$route.meta.keepAlive" :is="Component" :key="$route.name"></component>
+    </router-view>
+   </div>
+ 
+    
   </div>
 </template>
 

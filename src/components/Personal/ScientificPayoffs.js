@@ -1,0 +1,1256 @@
+
+//标准时间转时间戳
+const transitionJab = (val) => {
+  const date = new Date(val) * 1
+  return date
+}
+
+const startTime_1 = (rule, value, callback) => {
+  let start = educationAndTraining.value.children[0].tableHeader[5].value
+  let end = educationAndTraining.value.children[0].tableHeader[6].value
+  if (value === '' || value === null) {
+    callback(new Error('开始年月'))
+  } else {
+    if (transitionJab(start) > transitionJab(end)) {
+      callback('开始年月不能大于结束年月')
+      educationAndTraining.value.children[0].tableHeader[5].value = 'blank'
+    } else {
+      callback()
+    }
+
+  }
+}
+
+const endTime_1 = (rule, value, callback) => {
+  let start = educationAndTraining.value.children[0].tableHeader[5].value
+  let end = educationAndTraining.value.children[0].tableHeader[6].value
+  if (value === '' || value === null) {
+    callback(new Error('结束年月'))
+  } else {
+    if (transitionJab(start) > transitionJab(end)) {
+      callback('结束年月不能大于开始年月')
+      educationAndTraining.value.children[0].tableHeader[6].value = 'blank'
+    } else {
+      callback()
+    }
+  }
+}
+
+const theAnnual_2 = (rule, value, callback) => {
+  let year = educationAndTraining.value.children[7].tableHeader[1].value
+  console.log('year: ', year, new Date());
+  if (value === '' || value === null) {
+    callback(new Error('请选择入选年份'))
+  } else {
+    if (transitionJab(year) > transitionJab(new Date())) {
+      callback('入选年份不能大于当前年份')
+      educationAndTraining.value.children[7].tableHeader[1].value = 'blank'
+    } else {
+      callback()
+    }
+  }
+}
+export const educationAndTraining = ref(
+     {
+      title: '教学科研成果及获奖',
+      children: [
+        {
+          info: '项目（课题）',
+          isOperate: true,
+          isAnnex: true,
+          isBtn: true,
+          allPage:0,
+          tableHeader: [
+            {
+              width: "166px",
+              prop2: "projectType",
+              label: "项目类型",
+              new:'top',
+              value: "",
+              type: "select",
+              isMust: true,
+              isDisable: false,
+            },
+            {
+              width: "166px",
+              prop2: "projectName",
+              label: "项目名称",
+              value: "",
+              type: "input",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                { required: true, message: '请输入项目名称', trigger: 'change' },
+              ],
+            },
+            {
+              width: "166px",
+              prop2: "projectRatifyId",
+              label: "项目批准号",
+              value: "",
+              type: "input",
+              isMust: false,
+              isDisable: false,
+            },
+            {
+              width: "166px",
+              prop2: "subjectAmbit",
+              label: "学科领域",
+              value: "",
+              type: "select",
+              isMust: true,
+              isDisable: false,
+            },
+            {
+              width: "166px",
+              prop2: "expenditureLimit",
+              label: "项目经费额度",
+              value: "",
+              type: "input",
+              isMust: false,
+              isDisable: false,
+            },
+            {
+              width: "166px",
+              prop2: "startTime",
+              label: "开始年月",
+              value: "",
+              type: "dateMonth",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                {
+                  required: true,
+                  validator: startTime_1,
+                  trigger: 'change'
+                },
+              ],
+            },
+            {
+              width: "166px",
+              prop2: "endTime",
+              label: "结束年月",
+              value: "",
+              type: "dateMonth",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                {
+                  required: true,
+                  validator: endTime_1,
+                  trigger: 'change'
+                },
+              ],
+            },
+            {
+              width: "166px",
+              prop2: "selfRole",
+              label: "项目中本人角色",
+              value: "",
+              type: "select",
+              isMust: false,
+              isDisable: false,
+            },
+            {
+              width: "166px",
+              prop2: "selfRanking",
+              label: "本人排名",
+              value: "",
+              type: "input",
+              isMust: false,
+              isDisable: false,
+            },
+            {
+              width: "166px",
+              prop2: "entrustUnit",
+              label: "项目委托单位",
+              value: "",
+              type: "input",
+              isMust: false,
+              isDisable: false,
+            },
+            {
+              width: "166px",
+              prop2: "projectSource",
+              label: "项目来源",
+              value: "",
+              type: "select",
+              isMust: false,
+              isDisable: false,
+            },
+            {
+              width: "166px",
+              prop2: "isRepresentativeAchievement",
+              label: "是否是代表性成果和项目",
+              value: "",
+              type: "select",
+              isMust: false,
+              isDisable: false,
+              opt:[{name:"是"},{name:'否'}]
+            },
+            {
+              width: "166px",
+              prop2: "workDescribe",
+              label: "本人工作描述",
+              value: "",
+              type: "input",
+              isMust: false,
+              isDisable: false,
+            },
+            {
+              prop2: "attachment",
+              label: "附件",
+              width:'166px',
+              value:"",
+              type:"upload",
+            },
+          ],
+          tableContent: [
+          ],
+        },
+        {
+          info: '骨干教师情况',
+          isOperate: true,
+          isBtn: true,
+          isAnnex: true,
+          allPage:0,
+          tableHeader: [
+            {
+              width: "163px",
+              prop2: "backboneTeacherType",
+              label: "骨干教师类型",
+              new:'top',
+              value: "",
+              type: "select",
+              isMust: true,
+              isDisable: false,
+            },
+            {
+              width: "163px",
+              prop2: "backboneTeacherRank",
+              label: "骨干教师级别",
+              value: "",
+              type: "select",
+              isMust: true,
+              isDisable: false,
+            },
+            {
+              width: "163px",
+              prop2: "backboneTeacherName",
+              label: "骨干称号名称",
+              value: "",
+              type: "input",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                { required: true, message: '请输入骨干称号名称', trigger: 'change' },
+              ],
+            },
+            {
+              width: "163px",
+              prop2: "getBackboneTeacherTime",
+              label: "获得骨干教师称号时间",
+              value: "",
+              type: "date",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                { required: true, message: '请选择获得骨干教师称号时间', trigger: 'change' },
+              ],
+            },
+          ],
+          tableContent: [
+          ],
+        },
+        {
+          info: '指导学生参加获奖',
+          isOperate: true,
+          isAnnex: true,
+          isBtn: true,
+          allPage:0,
+          tableHeader: [
+            {
+              width: "125px",
+              prop2: "getAwardName",
+              label: "获奖名称",
+              new:'top',
+              value: "",
+              type: "input",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                { required: true, message: '请输入获奖名称', trigger: 'change' },
+              ],
+            },
+            {
+              width: "125px",
+              prop2: "selfRole",
+              label: "本人角色",
+              value: "",
+              type: "select",
+              isMust: true,
+              isDisable: false,
+            },
+            {
+              width: "125px",
+              prop2: "getAwardGrade",
+              label: "获奖等级",
+              value: "",
+              type: "input",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                { required: true, message: '请输入获奖等级', trigger: 'change' },
+              ],
+            },
+            {
+              width: "125px",
+              prop2: "getAwardRank",
+              label: "获奖级别",
+              value: "",
+              type: "select",
+              isMust: true,
+              isDisable: false,
+            },
+            {
+              width: "125px",
+              prop2: "getAwardTime",
+              label: "获奖年月",
+              value: "",
+              type: "date",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                { required: true, message: '请选择获奖年月', trigger: 'change' },
+              ],
+            },
+            {
+              width: "125px",
+              prop2: "jobDescription",
+              label: "本人承担工作描述",
+              value: "",
+              type: "input",
+              isMust: false,
+              isDisable: false,
+            },
+            {
+              prop2: "attachment",
+              label: "附件",
+              width:'125px',
+              value:"",
+              type:"upload",
+            },
+          ],
+          tableContent: [
+          ],
+        },
+        {
+          info: '奖励',
+          isOperate: true,
+          isAnnex: true,
+          isBtn: true,
+          allPage:0,
+          tableHeader: [
+            {
+              width: "125px",
+              prop2: "awardCategory",
+              label: "奖励类别",
+              new:'top',
+              value: "",
+              type: "select",
+              isMust: true,
+              isDisable: false,
+            },
+            {
+              width: "125px",
+              prop2: "getAwardTime",
+              label: "获奖年月",
+              value: "",
+              type: "dateMonth",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                { required: true, message: '请选择获奖年月', trigger: 'change' },
+              ],
+            },
+            {
+              width: "125px",
+              prop2: "awardName",
+              label: "奖励名称",
+              value: "",
+              type: "input",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                { required: true, message: '请输入奖励名称', trigger: 'change' },
+              ],
+            },
+            {
+              width: "125px",
+              prop2: "awardRank",
+              label: "奖励级别",
+              value: "",
+              type: "select",
+              isMust: true,
+              isDisable: false,
+            },
+            {
+              width: "125px",
+              prop2: "awardGrade",
+              label: "奖励等级",
+              value: "",
+              type: "select",
+              isMust: false,
+              isDisable: false,
+            },
+            {
+              width: "125px",
+              prop2: "awardElseGrade",
+              label: "奖励其他等级",
+              value: "",
+              type: "input",
+              isMust: false,
+              isDisable: false,
+            },
+            {
+              width: "125px",
+              prop2: "selfRanking",
+              label: "本人排名",
+              value: "",
+              type: "input",
+              isMust: false,
+              isDisable: false,
+            },
+            {
+              width: "125px",
+              prop2: "area",
+              label: "授权国家（地区）",
+              value: "",
+              type: "select",
+              isMust: false,
+              isDisable: false,
+            },
+            {
+              width: "125px",
+              prop2: "awardPrizeUnit",
+              label: "授奖单位",
+              value: "",
+              type: "input",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                { required: true, message: '请输入授奖单位', trigger: 'change' },
+              ],
+            },
+            {
+              prop2: "attachment",
+              label: "附件",
+              width:'125px',
+              value:"",
+              type:"upload",
+            },
+          ],
+          tableContent: [
+          ],
+        },
+        {
+          info: '荣誉称号',
+          isOperate: true,
+          isAnnex: true,
+          isBtn: true,
+          allPage:0,
+          tableHeader: [
+            {
+              width: "108px",
+              prop2: "honorName",
+              label: "荣誉称号",
+              new:'top',
+              value: "",
+              type: "select",
+              isMust: true,
+              isDisable: false,
+            },
+            {
+              width: "108px",
+              prop2: "getHonorTime",
+              label: "获得称号时间",
+              value: "",
+              type: "date",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                { required: true, message: '请选择获得称号时间', trigger: 'change' },
+              ],
+            },
+            {
+              width: "108px",
+              prop2: "getHonorRank",
+              label: "荣誉称号级别",
+              value: "",
+              type: "select",
+              isMust: true,
+              isDisable: false,
+            },
+            {
+              width: "108px",
+              prop2: "signatureUnit",
+              label: "签章单位",
+              value: "",
+              type: "input",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                { required: true, message: '请输入签章单位', trigger: 'change' },
+              ],
+            },
+          ],
+          tableContent: [
+          ],
+        },
+        {
+          info: '班主任荣誉',
+          isOperate: true,
+          isAnnex: true,
+          isBtn: true,
+          allPage:0,
+          tableHeader: [
+            {
+              prop2: "honorName",
+              label: "荣誉名称",
+              new:'top',
+              value: "",
+              type: "input",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                { required: true, message: '请输入荣誉名称', trigger: 'change' },
+              ],
+            },
+            {
+              prop2: "getAwardTime",
+              label: "获奖时间",
+              value: "",
+              type: "date",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                { required: true, message: '请选择获奖时间', trigger: 'change' },
+              ],
+            },
+            {
+              prop2: "signatureUnit",
+              label: "签章单位",
+              value: "",
+              type: "input",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                { required: true, message: '请输入签章单位', trigger: 'change' },
+              ],
+            },
+          ],
+          tableContent: [
+          ],
+        },
+        {
+          info: '先进班集体荣誉',
+          isOperate: true,
+          isAnnex: true,
+          isBtn: true,
+          allPage:0,
+          tableHeader: [
+            {
+              width: "82px",
+              prop2: "honorClass",
+              label: "荣誉班级",
+              new:'top',
+              value: "",
+              type: "input",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                { required: true, message: '请输入荣誉班级', trigger: 'change' },
+              ],
+            },
+            {
+              width: "82px",
+              prop2: "classCondition",
+              label: "班集体情况",
+              value: "",
+              type: "input",
+              isMust: true,
+              isDisable: false,
+            },
+            {
+              width: "82px",
+              prop2: "signatureTime",
+              label: "获奖时间",
+              value: "",
+              type: "date",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                { required: true, message: '请选择获奖时间', trigger: 'change' },
+              ],
+            },
+            {
+              width: "82px",
+              prop2: "getAwardRank",
+              label: "获奖级别",
+              value: "",
+              type: "select",
+              isMust: true,
+              isDisable: false,
+            },
+            {
+              width: "82px",
+              prop2: "signatureUnit",
+              label: "签章单位",
+              value: "",
+              type: "input",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                { required: true, message: '请签章单位', trigger: 'change' },
+              ],
+            },
+          ],
+          tableContent: [
+          ],
+        },
+        {
+          info: '入选人才项目',
+          isOperate: true,
+          isAnnex: true,
+          isBtn: true,
+          allPage:0,
+          tableHeader: [
+            {
+              width: "124px",
+              prop2: "talentProjectName",
+              label: "入选人才项目名称",
+              new:'top',
+              value: "",
+              type: "select",
+              isMust: true,
+              isDisable: false,
+            },
+            {
+              width: "124px",
+              prop2: "talentProjectTime",
+              label: "入选年份",
+              value: "",
+              type: "dateYear",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                {
+                  required: true,
+                  validator: theAnnual_2,
+                  trigger: 'change'
+                },
+              ],
+            },
+          ],
+          tableContent: [
+          ],
+        },
+        {
+          info: '著作',
+          isOperate: true,
+          isAnnex: true,
+          isBtn: true,
+          allPage:0,
+          tableHeader: [
+            {
+              width: "168px",
+              prop2: "productionType",
+              label: "著作类别",
+              new:'top',
+              value: "",
+              type: "select",
+              isMust: true,
+              isDisable: false,
+            },
+            {
+              width: "168px",
+              prop2: "productionName",
+              label: "著作名称",
+              value: "",
+              type: "input",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                { required: true, message: '请输入著作名称', trigger: 'change' },
+              ],
+            },
+            {
+              width: "168px",
+              prop2: "subjectAmbit",
+              label: "学科领域",
+              value: "",
+              type: "select",
+              isMust: true,
+              isDisable: false,
+            },
+            {
+              width: "168px",
+              prop2: "publicationTime",
+              label: "出版日期",
+              value: "",
+              type: "date",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                { required: true, message: '请选择出版日期', trigger: 'change' },
+              ],
+            },
+            {
+              width: "168px",
+              prop2: "pressName",
+              label: "出版社名称",
+              value: "",
+              type: "input",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                { required: true, message: '请输入出版社名称', trigger: 'change' },
+              ],
+            },
+            {
+              width: "168px",
+              prop2: "publicationId",
+              label: "出版号",
+              value: "",
+              type: "input",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                { required: true, message: '请输入出版号', trigger: 'change' },
+              ],
+            },
+            {
+              width: "168px",
+              prop2: "inProductionSelfRole",
+              label: "著作中本人角色",
+              value: "",
+              type: "select",
+              isMust: true,
+              isDisable: false,
+            },
+            {
+              width: "168px",
+              prop2: "wordNumber",
+              label: "总字数（字）",
+              value: "",
+              type: "input",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                { required: true, message: '请输入总字数(字)', trigger: 'change' },
+              ],
+            },
+            {
+              width: "168px",
+              prop2: "selfWrite",
+              label: "本人撰写字数（字）",
+              value: "",
+              type: "input",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                { required: true, message: '请输入本人撰写字数(字)', trigger: 'change' },
+              ],
+            },
+            {
+              width: "168px",
+              prop2: "isRepresentativeAchievement",
+              label: "是否是代表性成果和项目",
+              value: "",
+              type: "select",
+              isMust: false,
+              isDisable: false,
+              opt:[{name:"是"},{name:'否'}]
+            },
+            {
+              prop2: "attachment",
+              label: "附件",
+              width:'125px',
+              value:"",
+              type:"upload",
+            },
+          ],
+          tableContent: [
+          ],
+        },
+        {
+          info: '论文案例',
+          isOperate: true,
+          isAnnex: true,
+          isBtn: true,
+          allPage:0,
+          tableHeader: [
+            {
+              width: "168px",
+              prop2: "paperCaseName",
+              label: "论文案例名称",
+              new:'top',
+              value: "",
+              type: "input",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                { required: true, message: '请输入论文案例名称', trigger: 'change' },
+              ],
+            },
+            {
+              width: "168px",
+              prop2: "paperCaseRank",
+              label: "论文案例级别",
+              value: "",
+              type: "select",
+              isMust: true,
+              isDisable: false,
+            },
+            {
+              width: "168px",
+              prop2: "issueJournalsName",
+              label: "发表刊物名称",
+              value: "",
+              type: "input",
+              isMust: false,
+              isDisable: false,
+            },
+            {
+              width: "168px",
+              prop2: "issueJournalsRank",
+              label: "发表刊物级别",
+              value: "",
+              type: "select",
+              isMust: false,
+              isDisable: false,
+            },
+            {
+              width: "168px",
+              prop2: "isCoreJournal",
+              label: "是否核心期刊",
+              value: "",
+              type: "select",
+              isMust: false,
+              isDisable: false,
+              opt:[{name:"是"},{name:'否'}]
+            },
+            {
+              width: "168px",
+              prop2: "coreJournalType",
+              label: "核心期刊类别",
+              value: "",
+              type: "select",
+              isMust: false,
+              isDisable: false,
+            },
+            {
+              width: "168px",
+              prop2: "publishTime",
+              label: "发表年月",
+              value: "",
+              type: "dateMonth",
+              isMust: false,
+              isDisable: false,
+            },
+            {
+              width: "168px",
+              prop2: "reelId",
+              label: "卷号",
+              value: "",
+              type: "input",
+              isMust: false,
+              isDisable: false,
+            },
+            {
+              width: "168px",
+              prop2: "expectId",
+              label: "期号",
+              value: "",
+              type: "input",
+              isMust: false,
+              isDisable: false,
+            },
+            {
+              width: "168px",
+              prop2: "startPage",
+              label: "起始页码",
+              value: "",
+              type: "input",
+              isMust: false,
+              isDisable: false,
+            },
+            {
+              width: "168px",
+              prop2: "endPage",
+              label: "结束页码",
+              value: "",
+              type: "input",
+              isMust: false,
+              isDisable: false,
+            },
+            {
+              width: "168px",
+              prop2: "selfRole",
+              label: "本人角色",
+              value: "",
+              type: "select",
+              isMust: true,
+              isDisable: false,
+            },
+            {
+              width: "168px",
+              prop2: "ambit",
+              label: "学科领域",
+              value: "",
+              type: "select",
+              isMust: true,
+              isDisable: false,
+            },
+            {
+              width: "168px",
+              prop2: "publicationId",
+              label: "论文案例收录情况",
+              value: "",
+              type: "select",
+              isMust: false,
+              isDisable: false,
+            },
+            {
+              width: "168px",
+              prop2: "isPublic",
+              label: "是否发表",
+              value: "",
+              type: "select",
+              isMust: false,
+              isDisable: false,
+              opt:[{name:"是"},{name:'否'}]
+            },
+            {
+              width: "168px",
+              prop2: "isGetAward",
+              label: "是否获奖",
+              value: "",
+              type: "select",
+              isMust: false,
+              isDisable: false,
+              opt:[{name:"是"},{name:'否'}]
+            },
+            {
+              width: "168px",
+              prop2: "getAwardTime",
+              label: "获奖年月",
+              value: "",
+              type: "dateMonth",
+              isMust: false,
+              isDisable: false,
+            },
+            {
+              width: "168px",
+              prop2: "awardPrizeUnit",
+              label: "授奖单位",
+              value: "",
+              type: "input",
+              isMust: false,
+              isDisable: false,
+            },
+            {
+              width: "168px",
+              prop2: "awardName",
+              label: "奖励名称",
+              value: "",
+              type: "input",
+              isMust: false,
+              isDisable: false,
+            },
+            {
+              width: "168px",
+              prop2: "isRepresentativeAchievement",
+              label: "是否是代表性成果和项目",
+              value: "",
+              type: "select",
+              isMust: false,
+              isDisable: false,
+              opt:[{name:"是"},{name:'否'}]
+            },
+            {
+              width: "168px",
+              prop2: "awardGrade",
+              label: "奖励等级",
+              value: "",
+              type: "select",
+              isMust: false,
+              isDisable: false,
+            },
+            {
+              prop2: "attachment",
+              label: "附件",
+              width:'125px',
+              value:"",
+              type:"upload",
+            },
+          ],
+          tableContent: [
+          ],
+        },
+        {
+          info: '文艺作品',
+          isOperate: true,
+          isAnnex: true,
+          isBtn: true,
+          allPage:0,
+          tableHeader: [
+            {
+              width: "168px",
+              prop2: "literaryWorksType",
+              label: "文艺作品类别",
+              new:'top',
+              value: "",
+              type: "select",
+              isMust: true,
+              isDisable: false,
+            },
+            {
+              width: "168px",
+              prop2: "literaryWorksName",
+              label: "文艺作品名称",
+              value: "",
+              type: "input",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                { required: true, message: '请输入文艺作品名称', trigger: 'change' },
+              ],
+            },
+            {
+              width: "168px",
+              prop2: "selfRole",
+              label: "本人角色",
+              value: "",
+              type: "select",
+              isMust: true,
+              isDisable: false,
+            },
+            {
+              width: "168px",
+              prop2: "accomplishTime",
+              label: "完成时间",
+              value: "",
+              type: "date",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                { required: true, message: '请选择完成时间', trigger: 'change' },
+              ],
+            },
+            {
+              width: "168px",
+              prop2: "accomplishPlace",
+              label: "完成地点",
+              value: "",
+              type: "input",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                { required: true, message: '请输入完成地点', trigger: 'change' },
+              ],
+            },
+            {
+              width: "168px",
+              prop2: "workDescribe",
+              label: "本人工作描述",
+              value: "",
+              type: "input",
+              isMust: false,
+              isDisable: false,
+            },
+            {
+              width: "168px",
+              prop2: "isRepresentativeAchievement",
+              label: "是否是代表性成果和项目",
+              value: "",
+              type: "select",
+              isMust: false,
+              isDisable: false,
+              opt:[{name:"是"},{name:'否'}]
+            },
+            {
+              prop2: "attachment",
+              label: "附件",
+              width:'125px',
+              value:"",
+              type:"upload",
+            },
+          ],
+          tableContent: [
+          ],
+        },
+        {
+          info: '专利或软件著作权',
+          isOperate: true,
+          isAnnex: true,
+          isBtn: true,
+          allPage:0,
+          tableHeader: [
+            {
+              width: "168px",
+              prop2: "patentType",
+              label: "专利或软件著作权类型",
+              new:'top',
+              value: "",
+              type: "select",
+              isMust: true,
+              isDisable: false,
+            },
+            {
+              width: "168px",
+              prop2: "patentName",
+              label: "专利或软件著作权名称",
+              value: "",
+              type: "input",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                { required: true, message: '请输入专利或软件著作权名称', trigger: 'change' },
+              ],
+            },
+            {
+              width: "168px",
+              prop2: "subjectAmbit",
+              label: "学科领域",
+              value: "",
+              type: "select",
+              isMust: true,
+              isDisable: false,
+            },
+            {
+              width: "168px",
+              prop2: "ratifyTime",
+              label: "批准日期",
+              value: "",
+              type: "date",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                { required: true, message: '请选择批准日期', trigger: 'change' },
+              ],
+            },
+            {
+              width: "168px",
+              prop2: "selfRole",
+              label: "本人角色",
+              value: "",
+              type: "select",
+              isMust: true,
+              isDisable: false,
+            },
+            {
+              width: "168px",
+              prop2: "workDescribe",
+              label: "本人工作描述",
+              value: "",
+              type: "input",
+              isMust: false,
+              isDisable: false,
+            },
+            {
+              width: "168px",
+              prop2: "isRepresentativeAchievement",
+              label: "是否是代表性成果和项目",
+              value: "",
+              type: "select",
+              isMust: false,
+              isDisable: false,
+              opt:[{name:"是"},{name:'否'}]
+            },
+            {
+              prop2: "attachment",
+              label: "附件",
+              width:'125px',
+              value:"",
+              type:"upload",
+            },
+          ],
+          tableContent: [
+          ],
+        },
+        {
+          info: '咨询报告或研究报告',
+          isOperate: true,
+          isAnnex: true,
+          isBtn: true,
+          allPage:0,
+          tableHeader: [
+            {
+              width: "168px",
+              prop2: "reportTitle",
+              label: "报告题目",
+              new:'top',
+              value: "",
+              type: "input",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                { required: true, message: '请输入报告题目', trigger: 'change' },
+              ],
+            },
+            {
+              width: "168px",
+              prop2: "selfRole",
+              label: "本人角色",
+              value: "",
+              type: "select",
+              isMust: true,
+              isDisable: false,
+            },
+            {
+              width: "168px",
+              prop2: "reportTime",
+              label: "报告时间",
+              value: "",
+              type: "date",
+              isMust: true,
+              isDisable: false,
+              rules: [
+                { required: true, message: '请选择报告时间', trigger: 'change' },
+              ],
+            },
+            {
+              width: "168px",
+              prop2: "client",
+              label: "委托方",
+              value: "",
+              type: "input",
+              isMust: false,
+              isDisable: false,
+            },
+            {
+              width: "168px",
+              prop2: "isRepresentativeAchievement",
+              label: "是否是代表性成果和项目",
+              value: "",
+              type: "select",
+              isMust: false,
+              isDisable: false,
+              opt:[{name:"是"},{name:'否'}]
+            },
+            {
+              prop2: "attachment",
+              label: "附件",
+              width:'125px',
+              value:"",
+              type:"upload",
+            },
+          ],
+          tableContent: [
+
+          ],
+        },
+      ]
+    },
+)

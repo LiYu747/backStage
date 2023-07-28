@@ -58,7 +58,7 @@ const { info, List, columns,isOperate,isAnnex } = toRefs(props)
         </div>
     </div>
     <div class="personal_table">
-        <el-table :data="List" border style="width: 100%">
+        <el-table :data="List" border style="width: 100%" :show-header="false">
             <!-- 表格业务内容列 -->
             <template v-for="(item, index) in columns" :key="index">
                 <el-table-column v-if="item.isClass" :prop="item.prop" :label="item.label" header-align="center"

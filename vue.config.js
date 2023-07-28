@@ -10,10 +10,17 @@ const { VantResolver } = require("unplugin-vue-components/resolvers");
 module.exports = defineConfig({
   publicPath: "./",
   transpileDependencies: true,
+  productionSourceMap: false,
   devServer: {
     client: {
       overlay: false,
     },
+  },
+  chainWebpack: (config) => {
+    config.plugin('html').tap((args) => {
+      args[0].title = '诸暨教师精细化管理系统'
+      return args
+    })
   },
   configureWebpack: {
     plugins: [
